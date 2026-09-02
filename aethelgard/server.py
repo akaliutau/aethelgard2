@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 import json
+import os
 import tempfile
 import threading
 import zipfile
@@ -12,6 +15,24 @@ from .remote_codec import encode_results
 from .vault import Vault
 
 
+def runtime_config(config: VaultConfig) -> VaultConfig:
+    """Normalize client config for the worker without changing model identity.
+
+    The client still supplies model names and semantic configuration. The worker
+    may only override execution location/device, which is intentionally not part
+    of the semantic meaning of the extracted evidence.
+    """
+
+    device = os.environ.get('AETHELGARD_WORKER_DEVICE', '').strip()
+    update: dict[str, object] = {
+        'source': SourceConfig(kind='local', uri='.'),
+    }
+    if device:
+        update['extractor'] = config.extractor.model_copy(update={'device': device})
+        update['embeddings'] = config.embeddings.model_copy(update={'device': device})
+    return config.model_copy(update=update)
+
+
 class WorkerRuntime:
     """Caches heavyweight model components across Cloud Run requests."""
 
@@ -20,7 +41,15 @@ class WorkerRuntime:
         self._lock = threading.Lock()
 
     def components(self, config: VaultConfig):
-        key = config.model_copy(update={'source': SourceConfig(kind='local', uri='.')}).model_dump_json()
+        config = runtime_config(config)
+        key = json.dumps(
+            {
+                'extractor': config.extractor.model_dump(),
+                'embeddings': config.embeddings.model_dump(),
+            },
+            sort_keys=True,
+            separators=(',', ':'),
+        )
         with self._lock:
             if key not in self._cache:
                 self._cache[key] = build_components(config)
@@ -36,11 +65,15 @@ def create_app():
     except ImportError as exc:
         raise RuntimeError('Worker service requires `pip install -e .[cloud]`') from exc
 
-    app = FastAPI(title='Aethelgard Vault Worker', version='0.5.0')
+    app = FastAPI(title='Aethelgard Vault Worker', version='0.6.0')
 
     @app.get('/healthz')
     def healthz():
-        return {'status': 'ok'}
+        return {
+            'status': 'ok',
+            'device': os.environ.get('AETHELGARD_WORKER_DEVICE', 'client-config'),
+            'hf_offline': os.environ.get('HF_HUB_OFFLINE') == '1',
+        }
 
     @app.post('/v1/process')
     async def process(request: Request):
@@ -61,10 +94,11 @@ def create_app():
                             raise ValueError(f'unsafe zip member: {name}')
                     zf.extractall(root)
                 job = json.loads((root / 'job.json').read_text())
-                config = VaultConfig.model_validate(job['config'])
+                client_config = VaultConfig.model_validate(job['config'])
+                config = runtime_config(client_config)
                 config = config.model_copy(update={'source': SourceConfig(kind='local', uri='source')})
                 vault = Vault.init(root, config)
-                pipeline = build_pipeline(root, config, _runtime.components(config))
+                pipeline = build_pipeline(root, config, _runtime.components(client_config))
                 executor = LocalExecutor(vault, pipeline)
                 results = executor.process(job.get('case_ids'))
                 return Response(content=encode_results(results), media_type='application/zip')
