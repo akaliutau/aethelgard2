@@ -36,7 +36,7 @@ def create_app():
     except ImportError as exc:
         raise RuntimeError('Worker service requires `pip install -e .[cloud]`') from exc
 
-    app = FastAPI(title='Aethelgard Vault Worker', version='0.4.0')
+    app = FastAPI(title='Aethelgard Vault Worker', version='0.5.0')
 
     @app.get('/healthz')
     def healthz():

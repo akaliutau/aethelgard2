@@ -10,7 +10,8 @@ from rich.table import Table
 
 from .adapters.executors import HTTPRemoteExecutor, LocalExecutor
 from .config import EmbeddingsConfig, ExtractorConfig, SourceConfig, VaultConfig
-from .factory import build_pipeline
+from .factory import build_pipeline, build_search_service
+from .search import encode_protected_query
 from .vault import Vault
 
 app = typer.Typer(no_args_is_help=True, help='Aethelgard: semantic Git for medical documents.')
@@ -25,6 +26,48 @@ def _open(path: Path) -> tuple[Vault, object]:
     vault = Vault(_root(path))
     pipeline = build_pipeline(vault.root, vault.config)
     return vault, pipeline
+
+
+def _image_bytes(image: Path | None) -> bytes | None:
+    return image.expanduser().read_bytes() if image else None
+
+
+def _hits_json(hits) -> list[dict]:
+    return [
+        {
+            'case_id': hit.case_id,
+            'revision_id': hit.revision_id,
+            'score': hit.score,
+            'component_scores': dict(hit.component_scores),
+            'evidence': list(hit.evidence),
+        }
+        for hit in hits
+    ]
+
+
+def _print_hits(title: str, hits) -> None:
+    table = Table(title=title)
+    table.add_column('Rank', justify='right')
+    table.add_column('Case')
+    table.add_column('Score', justify='right')
+    table.add_column('Clinical', justify='right')
+    table.add_column('Image', justify='right')
+    for rank, hit in enumerate(hits, 1):
+        table.add_row(
+            str(rank),
+            hit.case_id,
+            f'{hit.score:.4f}',
+            f'{hit.component_scores.get("clinical_text", 0.0):.4f}'
+            if 'clinical_text' in hit.component_scores else '—',
+            f'{hit.component_scores.get("medical_image", 0.0):.4f}'
+            if 'medical_image' in hit.component_scores else '—',
+        )
+    console.print(table)
+    for hit in hits:
+        if hit.evidence:
+            console.print(f'[bold]{hit.case_id} relevant evidence[/bold]')
+            for fact in hit.evidence:
+                console.print(f'  • {fact}')
 
 
 @app.command()
@@ -167,6 +210,131 @@ def verify(path: Annotated[Path, typer.Argument()] = Path('.')):
             console.print(f'[red]✗[/red] {problem}')
         raise typer.Exit(1)
     console.print('[green]✓ Vault derived artifacts and manifests verified.[/green]')
+
+
+
+@app.command(name='search')
+def search_cmd(
+    query: Annotated[str, typer.Argument(help='Clinical evidence query')],
+    path: Annotated[Path, typer.Option('--path', '-p')] = Path('.'),
+    image: Annotated[Optional[Path], typer.Option('--image', help='Optional query JPG/PNG')] = None,
+    top_k: Annotated[Optional[int], typer.Option('--top-k')] = None,
+    summary_facts: Annotated[Optional[int], typer.Option('--summary-facts')] = None,
+    protected: Annotated[bool, typer.Option('--protected', help='Search using a perturbed vector, simulating an external peer')] = False,
+    compare_protection: Annotated[bool, typer.Option('--compare-protection', help='Compare clean and protected ranking')] = False,
+    seed: Annotated[Optional[int], typer.Option('--seed', help='Reproducible protection experiment seed')] = None,
+    as_json: Annotated[bool, typer.Option('--json', help='Emit machine-readable JSON')] = False,
+):
+    vault = Vault(_root(path))
+    service = build_search_service(vault)
+    image_data = _image_bytes(image)
+
+    if compare_protection:
+        comparison = service.compare_protection(
+            query,
+            image_data,
+            top_k=top_k,
+            summary_facts=summary_facts,
+            seed=seed,
+        )
+        if as_json:
+            console.print_json(data={
+                'clean': _hits_json(comparison.clean),
+                'protected': _hits_json(comparison.protected),
+                'protection': {
+                    'algorithm': comparison.protection.algorithm,
+                    'parameters': dict(comparison.protection.parameters),
+                    'component_cosine': dict(comparison.protection.component_cosine),
+                },
+                'protected_vector_bytes': comparison.protected_vector_bytes,
+                'protected_wire_bytes': comparison.protected_wire_bytes,
+                'raw_query_text_bytes': len(query.encode()),
+                'raw_query_image_bytes': len(image_data or b''),
+                'raw_query_text_in_envelope': False,
+                'raw_query_image_in_envelope': False,
+                'top1_preserved': comparison.top1_preserved,
+                'top_k_overlap': comparison.top_k_overlap,
+            })
+            return
+        _print_hits('Clean query', comparison.clean)
+        _print_hits('Protected query', comparison.protected)
+        console.print(
+            f'Top-1 preserved: [bold]{comparison.top1_preserved}[/bold]  '
+            f'Top-k overlap: [bold]{comparison.top_k_overlap:.1%}[/bold]'
+        )
+        console.print(
+            f'Protected vectors: [bold]{comparison.protected_vector_bytes} B[/bold]  '
+            f'wire envelope: [bold]{comparison.protected_wire_bytes} B[/bold]  '
+            f'raw text/image included: [bold]no/no[/bold]'
+        )
+        for component, cosine in comparison.protection.component_cosine.items():
+            console.print(f'{component} clean/protected cosine: {cosine:.4f}')
+        return
+
+    vectors = service.encode(query, image_data)
+    protection_report = None
+    if protected:
+        vectors, protection_report = service.protector.protect(vectors, seed=seed)
+    hits = service.search_vectors(vectors, top_k=top_k, summary_facts=summary_facts)
+
+    if as_json:
+        payload = {'hits': _hits_json(hits)}
+        if protection_report:
+            payload['protection'] = {
+                'algorithm': protection_report.algorithm,
+                'parameters': dict(protection_report.parameters),
+                'component_cosine': dict(protection_report.component_cosine),
+            }
+        console.print_json(data=payload)
+        return
+    _print_hits('Aethelgard Search' + (' — protected vector' if protected else ''), hits)
+
+
+@app.command()
+def protect(
+    query: Annotated[str, typer.Argument(help='Clinical evidence query')],
+    path: Annotated[Path, typer.Option('--path', '-p')] = Path('.'),
+    image: Annotated[Optional[Path], typer.Option('--image', help='Optional query JPG/PNG')] = None,
+    output: Annotated[Optional[Path], typer.Option('--output', '-o', help='Write future transport envelope JSON')] = None,
+    seed: Annotated[Optional[int], typer.Option('--seed', help='Reproducible experiment seed')] = None,
+):
+    vault = Vault(_root(path))
+    service = build_search_service(vault)
+    image_data = _image_bytes(image)
+    clean = service.encode(query, image_data)
+    protected_vectors, report = service.protector.protect(clean, seed=seed)
+    envelope, wire = encode_protected_query(protected_vectors, report)
+
+    raw_text_bytes = len(query.encode())
+    raw_image_bytes = len(image_data or b'')
+    binary_vector_bytes = sum(
+        int(component['dimensions']) * 2
+        for component in envelope['components'].values()
+    )
+
+    table = Table(title='Protected Query')
+    table.add_column('Property')
+    table.add_column('Value')
+    table.add_row('Profile', envelope['profile'])
+    table.add_row('Components', ', '.join(
+        f'{name}={value["dimensions"]}d'
+        for name, value in envelope['components'].items()
+    ))
+    table.add_row('Algorithm', report.algorithm)
+    table.add_row('Protected vector bytes', str(binary_vector_bytes))
+    table.add_row('Serialized envelope bytes', str(len(wire)))
+    table.add_row('Raw query text bytes', str(raw_text_bytes))
+    table.add_row('Raw query image bytes', str(raw_image_bytes))
+    table.add_row('Raw query text included', 'no')
+    table.add_row('Raw query image included', 'no')
+    console.print(table)
+    for component, cosine in report.component_cosine.items():
+        console.print(f'{component} clean/protected cosine: {cosine:.4f}')
+
+    if output:
+        target = output.expanduser()
+        target.write_text(json.dumps(envelope, indent=2, sort_keys=True))
+        console.print(f'[green]Wrote[/green] {target}')
 
 
 @app.command(hidden=True)

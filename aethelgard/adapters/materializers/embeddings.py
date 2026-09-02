@@ -5,7 +5,6 @@ import json
 from dataclasses import dataclass, field
 from typing import Sequence
 
-
 from ...auth import gated_model_help, hf_token
 from ...domain import CaseBundle, DerivedBlob, Extraction, PolicyResult
 
@@ -15,6 +14,31 @@ def _normalize(vector):
     vector = np.asarray(vector, dtype=np.float32).reshape(-1)
     norm = float(np.linalg.norm(vector))
     return vector / norm if norm > 0 else vector
+
+
+def _fact_text(path: str, value) -> str:
+    label = path.replace('.', ' › ').replace('_', ' ').strip()
+    return f'{label}: {value}'
+
+
+def flatten_evidence(value, path: str = '') -> list[dict]:
+    """Flatten arbitrary evidence JSON into stable, human-readable atomic facts."""
+
+    facts: list[dict] = []
+    if isinstance(value, dict):
+        for key, child in value.items():
+            child_path = f'{path}.{key}' if path else key
+            facts.extend(flatten_evidence(child, child_path))
+    elif isinstance(value, list):
+        for child in value:
+            facts.extend(flatten_evidence(child, path))
+    else:
+        facts.append({
+            'path': path or 'evidence',
+            'value': value,
+            'text': _fact_text(path or 'evidence', value),
+        })
+    return facts
 
 
 @dataclass(slots=True)
@@ -52,9 +76,37 @@ class EmbeddingGemmaEncoder:
         import numpy as np
         self._ensure_loaded()
         if hasattr(self._model, 'encode_document'):
-            matrix = self._model.encode_document(list(texts), convert_to_numpy=True, normalize_embeddings=True)
+            matrix = self._model.encode_document(
+                list(texts),
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+            )
         else:
-            matrix = self._model.encode(list(texts), convert_to_numpy=True, normalize_embeddings=True)
+            matrix = self._model.encode(
+                list(texts),
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+            )
+        matrix = np.asarray(matrix, dtype=np.float32)
+        if matrix.ndim == 1:
+            matrix = matrix[None, :]
+        return [_normalize(row) for row in matrix]
+
+    def encode_query(self, texts: Sequence[str]):
+        import numpy as np
+        self._ensure_loaded()
+        if hasattr(self._model, 'encode_query'):
+            matrix = self._model.encode_query(
+                list(texts),
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+            )
+        else:
+            matrix = self._model.encode(
+                list(texts),
+                convert_to_numpy=True,
+                normalize_embeddings=True,
+            )
         matrix = np.asarray(matrix, dtype=np.float32)
         if matrix.ndim == 1:
             matrix = matrix[None, :]
@@ -108,9 +160,53 @@ class MedSigLIPEncoder:
                 features = outputs.pooler_output
 
         if hasattr(features, 'pooler_output'):
-                features = features.pooler_output
+            features = features.pooler_output
         matrix = features.detach().cpu().numpy().astype(np.float32)
         return [_normalize(row) for row in matrix]
+
+
+@dataclass(slots=True)
+class EvidenceFactsMaterializer:
+    text_encoder: EmbeddingGemmaEncoder
+
+    @property
+    def fingerprint(self) -> str:
+        return f'materializer:evidence-facts:v1:{self.text_encoder.fingerprint}'
+
+    def build(self, bundle: CaseBundle, extraction: Extraction, policy: PolicyResult) -> Sequence[DerivedBlob]:
+        import numpy as np
+
+        facts = flatten_evidence(policy.evidence)
+        texts = [item['text'] for item in facts]
+        vectors = (
+            np.stack(self.text_encoder.encode(texts)).astype(np.float32)
+            if texts
+            else np.empty((0, self.text_encoder.dimensions), dtype=np.float32)
+        )
+
+        buffer = io.BytesIO()
+        np.savez_compressed(buffer, vectors=vectors)
+        metadata = {
+            'count': len(facts),
+            'dimensions': int(vectors.shape[1]) if vectors.ndim == 2 and vectors.shape[0] else self.text_encoder.dimensions,
+            'text_encoder': self.text_encoder.fingerprint,
+        }
+        return (
+            DerivedBlob(
+                kind='evidence_facts',
+                filename='evidence_facts.json',
+                media_type='application/json',
+                data=json.dumps({'facts': facts}, indent=2, ensure_ascii=False, sort_keys=True).encode(),
+                metadata=metadata,
+            ),
+            DerivedBlob(
+                kind='evidence_fact_vectors',
+                filename='evidence_facts.npz',
+                media_type='application/x-npz',
+                data=buffer.getvalue(),
+                metadata=metadata,
+            ),
+        )
 
 
 @dataclass(slots=True)
@@ -123,7 +219,7 @@ class MultimodalEmbeddingMaterializer:
     @property
     def fingerprint(self) -> str:
         return (
-            f'materializer:multimodal:v2:{self.text_encoder.fingerprint}:'
+            f'materializer:multimodal:v3:{self.text_encoder.fingerprint}:'
             f'{self.image_encoder.fingerprint}:{self.text_weight:.4f}:{self.image_weight:.4f}'
         )
 

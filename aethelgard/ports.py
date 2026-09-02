@@ -86,3 +86,53 @@ class Executor(Protocol):
     @property
     def fingerprint(self) -> str: ...
     def process(self, *, vault_root: Path, case_ids: Sequence[str] | None = None) -> Sequence[ProcessedCase]: ...
+
+
+# Search is a consumer of the vault, but its seams are Protocols so a future
+# transport/index package can replace individual pieces without changing Vault.
+from .search.domain import ProtectionReport, QueryVectors, SearchCandidate
+
+
+@runtime_checkable
+class VaultCatalog(Protocol):
+    def case_ids(self) -> Sequence[str]: ...
+    def current_output(self, case_id: str) -> Path: ...
+
+
+@runtime_checkable
+class QueryEncoder(Protocol):
+    @property
+    def fingerprint(self) -> str: ...
+    def encode(self, text: str, image: bytes | None = None) -> QueryVectors: ...
+
+
+@runtime_checkable
+class VectorProtector(Protocol):
+    @property
+    def fingerprint(self) -> str: ...
+    def protect(
+        self,
+        vectors: QueryVectors,
+        *,
+        seed: int | None = None,
+    ) -> tuple[QueryVectors, ProtectionReport]: ...
+
+
+@runtime_checkable
+class SearchIndex(Protocol):
+    @property
+    def fingerprint(self) -> str: ...
+    def search(self, vectors: QueryVectors, *, top_k: int) -> Sequence[SearchCandidate]: ...
+
+
+@runtime_checkable
+class EvidenceSelector(Protocol):
+    @property
+    def fingerprint(self) -> str: ...
+    def select(
+        self,
+        case_id: str,
+        vectors: QueryVectors,
+        *,
+        limit: int,
+    ) -> Sequence[str]: ...

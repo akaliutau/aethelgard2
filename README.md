@@ -4,7 +4,7 @@
 
 Aethelgard turns an ordinary folder of medical evidence into a local, reproducible semantic vault. Drop in free-text EHR exports, PDFs, JSON/CSV/HL7-like text and medical images; Aethelgard discovers changes, groups artifacts into cases, uses a pluggable extractor to produce flexible clinical evidence, applies deterministic privacy policy, materializes optional multimodal embeddings, and versions the complete semantic state.
 
-This version deliberately contains **no peer network, Pub/Sub federation, global query routing or orchestrator**. Those belong to a future access/transport layer. The vault is intended to remain useful and testable by itself, like Git remains useful without GitHub.
+This version deliberately contains **no peer network, Pub/Sub federation, global query routing or orchestrator**. It does include a local search/protection layer that consumes committed vault artifacts. Networking remains a future access/transport layer. The vault is intended to remain useful and testable by itself, like Git remains useful without GitHub.
 
 ## The data flow
 
@@ -33,12 +33,17 @@ working folder / cloud folder
    MATERIALIZERS
         │
         ├── EmbeddingGemma → clinical text vector
+        ├── EmbeddingGemma → evidence-fact vectors
         ├── MedSigLIP      → medical image vector
         └── weighted stack → multimodal vector
         │
         ▼
  SEMANTIC REVISION
  .aethelgard/derived/...
+        │
+        ├──────────────► aethelgard search
+        │
+        └──────────────► aethelgard protect
 ```
 
 A case in the demo is intentionally simple:
@@ -344,6 +349,140 @@ The working medical documents remain the source of truth; `.aethelgard` contains
 
 ---
 
+
+# Search and vector protection
+
+Search is a **consumer of committed vault artifacts**. It does not run Qwen and it does not change vault history.
+
+After upgrading to v0.5, run:
+
+```bash
+aethelgard status
+aethelgard run
+```
+
+once so each case receives the new search artifacts:
+
+```text
+evidence_facts.json
+evidence_facts.npz
+```
+
+The case resolver also now uses the immediate parent directory, so a source layout such as
+`demo/CASE-001/note.txt` and `demo/CASE-002/note.txt` remains two independent cases.
+
+## Text search
+
+```bash
+aethelgard search \
+  "spontaneous pneumothorax with hypoxemia; what treatment worked?"
+```
+
+The online path is deliberately lightweight:
+
+```text
+query text
+    ↓
+EmbeddingGemma query vector
+    ↓
+exact local cosine search
+    ↓
+rank matching cases
+    ↓
+rank precomputed evidence facts
+    ↓
+minimal relevant evidence summary
+```
+
+No generative model is called at query time.
+
+## Multimodal search
+
+Add an image:
+
+```bash
+aethelgard search \
+  "find clinically and radiographically similar cases" \
+  --image query.jpg
+```
+
+Aethelgard independently computes:
+
+```text
+clinical-text similarity
+medical-image similarity
+```
+
+and combines them using the configured modality weights. The component scores are shown separately for explainability.
+
+## Vector protection
+
+```bash
+aethelgard protect \
+  "spontaneous pneumothorax with hypoxemia" \
+  --image query.jpg \
+  --output protected-query.json
+```
+
+Protection occurs **after local query encoding**. Local search can use clean vectors; a future transport layer can receive only the protected envelope.
+
+The current reference protector applies independent normalized Gaussian perturbation to text and image vectors and serializes them as float16/Base64. The envelope contains no raw query text and no raw query image bytes.
+
+This is **empirical vector perturbation, not encryption and not a proof that inversion is impossible**.
+
+The default sigmas are intentionally conservative starting values (`text=0.01`, `image=0.02`). They are experiment parameters, not privacy guarantees; use `--compare-protection` and synthetic benchmark queries to tune the privacy/utility curve.
+
+For reproducible experiments:
+
+```bash
+aethelgard protect "pneumothorax" --seed 42
+```
+
+## Privacy / utility experiment
+
+The GOAI-oriented demo command is:
+
+```bash
+aethelgard search \
+  "spontaneous pneumothorax with hypoxemia; what treatment worked?" \
+  --image query.jpg \
+  --compare-protection \
+  --seed 42
+```
+
+It runs the same query twice:
+
+```text
+clean vector      → local vault search
+protected vector  → local vault search simulating an external peer
+```
+
+and reports:
+
+```text
+clean ranking
+protected ranking
+Top-1 preservation
+Top-k overlap
+clean/protected cosine by modality
+relevant evidence facts
+```
+
+This provides an empirical privacy/utility measurement before any networking code exists.
+
+The two search-layer ports intended for future federation are especially important:
+
+```python
+class QueryEncoder(Protocol): ...
+class VectorProtector(Protocol): ...
+class SearchIndex(Protocol): ...
+class EvidenceSelector(Protocol): ...
+```
+
+A future transport package should consume the protected query envelope; it should not be added to the vault pipeline.
+
+---
+
 # Models and extension boundaries
 
 Aethelgard deliberately separates the medical task from the runtime.
@@ -425,7 +564,7 @@ sqrt(image_weight) × normalized(image)
 
 The default weights are 0.45 text / 0.55 medical image and are part of the semantic fingerprint.
 
-Search and federation are intentionally **not implemented in this project version**. `embeddings.npz` is simply a reproducible vault artifact that later research/search layers can consume.
+Local search and vector protection are implemented as consumers of the vault. Federation is intentionally **not implemented**. The future transport layer should send the protected query envelope and execute the same search interface at the destination.
 
 ---
 
@@ -569,6 +708,8 @@ show      inspect evidence/provenance/privacy/derived products
 diff      compare the two latest semantic evidence revisions
 log       show semantic revision history
 verify    verify derived-artifact integrity
+search    rank local semantic cases and relevant evidence
+protect   create/inspect a protected future-transport query envelope
 ```
 
 The hidden `worker` command is an operational deployment entry point, not part of the normal vault workflow.
@@ -584,7 +725,7 @@ Not implemented here:
 - network query routing;
 - global search;
 - consensus;
-- vector noise for network transport;
+- actual network transport of protected vectors;
 - remote hospital-node protocols.
 
 Those should become a separate package/layer later and consume only public vault interfaces/derived artifacts.
@@ -619,6 +760,9 @@ aethelgard run --remote https://YOUR-WORKER.run.app
 aethelgard show CASE-001
 aethelgard show CASE-001 --view provenance
 aethelgard show CASE-001 --view derived
+aethelgard search "spontaneous pneumothorax with hypoxemia; what treatment worked?"
+aethelgard search "similar radiographic case" --image CASE-001/chest.jpg --compare-protection --seed 42
+aethelgard protect "similar radiographic case" --image CASE-001/chest.jpg --output protected-query.json
 ```
 
 Then edit `CASE-001/note.txt` and show:
@@ -629,4 +773,4 @@ aethelgard run --remote https://YOUR-WORKER.run.app
 aethelgard diff CASE-001
 ```
 
-This demonstrates the complete idea without any networking architecture diagram: **drop medical documents → understand them → inspect evidence → generate multimodal artifacts → track semantic changes reproducibly.**
+This demonstrates the complete idea without any networking architecture diagram: **drop medical documents → understand them → inspect evidence → generate multimodal artifacts → search them → measure clean-vs-protected retrieval → track semantic changes reproducibly.**

@@ -16,7 +16,7 @@ class SourceConfig(BaseModel):
 class ExtractorConfig(BaseModel):
     model_config = ConfigDict(extra='forbid')
     kind: str = 'qwen'
-    model: str = 'Qwen/Qwen3-4B'
+    model: str = 'Qwen/Qwen3-4B-Instruct-2507'
     device: str = 'cpu'
     max_new_tokens: int = 1024
 
@@ -32,16 +32,62 @@ class EmbeddingsConfig(BaseModel):
     image_weight: float = 0.55
 
 
+class ProtectionConfig(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    kind: str = 'gaussian'
+    text_sigma: float = 0.01
+    image_sigma: float = 0.02
+
+
+class SearchConfig(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    top_k: int = 5
+    summary_facts: int = 4
+    protection: ProtectionConfig = Field(default_factory=ProtectionConfig)
+
+
 class VaultConfig(BaseModel):
     model_config = ConfigDict(extra='forbid')
     source: SourceConfig = Field(default_factory=SourceConfig)
     extractor: ExtractorConfig = Field(default_factory=ExtractorConfig)
     embeddings: EmbeddingsConfig = Field(default_factory=EmbeddingsConfig)
+    search: SearchConfig = Field(default_factory=SearchConfig)
 
     @classmethod
     def load(cls, path: Path) -> 'VaultConfig':
         return cls.model_validate(tomllib.loads(path.read_text()))
 
     def to_toml(self) -> str:
-        s, e, m = self.source, self.extractor, self.embeddings
-        return f'''# Aethelgard Vault configuration\n\n[source]\nkind = "{s.kind}"\nuri = "{s.uri}"\nanonymous = {str(s.anonymous).lower()}\n\n[extractor]\nkind = "{e.kind}"\nmodel = "{e.model}"\ndevice = "{e.device}"\nmax_new_tokens = {e.max_new_tokens}\n\n[embeddings]\nenabled = {str(m.enabled).lower()}\ntext_model = "{m.text_model}"\ntext_dimensions = {m.text_dimensions}\nimage_model = "{m.image_model}"\ndevice = "{m.device}"\ntext_weight = {m.text_weight}\nimage_weight = {m.image_weight}\n'''
+        s, e, m, q = self.source, self.extractor, self.embeddings, self.search
+        p = q.protection
+        return f"""# Aethelgard Vault configuration
+
+[source]
+kind = "{s.kind}"
+uri = "{s.uri}"
+anonymous = {str(s.anonymous).lower()}
+
+[extractor]
+kind = "{e.kind}"
+model = "{e.model}"
+device = "{e.device}"
+max_new_tokens = {e.max_new_tokens}
+
+[embeddings]
+enabled = {str(m.enabled).lower()}
+text_model = "{m.text_model}"
+text_dimensions = {m.text_dimensions}
+image_model = "{m.image_model}"
+device = "{m.device}"
+text_weight = {m.text_weight}
+image_weight = {m.image_weight}
+
+[search]
+top_k = {q.top_k}
+summary_facts = {q.summary_facts}
+
+[search.protection]
+kind = "{p.kind}"
+text_sigma = {p.text_sigma}
+image_sigma = {p.image_sigma}
+"""

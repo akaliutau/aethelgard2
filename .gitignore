@@ -225,7 +225,7 @@ __pycache__/
 .idea/
 my-med-vault
 notes.txt
-aggregated-dump.txt
+aggregated_dump.txt
 docs/
 
 

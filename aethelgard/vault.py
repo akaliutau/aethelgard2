@@ -209,6 +209,12 @@ class Vault:
             db.executemany('DELETE FROM cases WHERE case_id = ?', [(x,) for x in ids])
             db.commit()
 
+    def case_ids(self) -> tuple[str, ...]:
+        """Return case IDs currently committed at vault HEAD."""
+        with self._db() as db:
+            rows = db.execute('SELECT case_id FROM cases ORDER BY case_id').fetchall()
+        return tuple(row['case_id'] for row in rows)
+
     def current_output(self, case_id: str) -> Path:
         with self._db() as db:
             row = db.execute('SELECT output_dir FROM cases WHERE case_id = ?', (case_id,)).fetchone()

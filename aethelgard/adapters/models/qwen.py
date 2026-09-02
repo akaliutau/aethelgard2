@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Any
-
+import hashlib
 from pydantic import BaseModel, Field
 
 from ...auth import hf_token
@@ -22,9 +22,10 @@ class ClinicalFact(BaseModel):
 
 class ClinicalFactBatch(BaseModel):
     facts: list[ClinicalFact] = Field(
-        default_factory=list,
-        description='Faithful clinical facts extracted from the source. Repeat a path for multiple values.',
+        min_length = 1,
+        description = 'Faithful clinical facts extracted from the source. Repeat a path for multiple values.',
     )
+
 
 
 def facts_to_evidence(batch: ClinicalFactBatch) -> dict[str, object]:
@@ -66,7 +67,7 @@ class QwenStructuredModel:
     Aethelgard.
     """
 
-    model_name: str = 'Qwen/Qwen3-4B'
+    model_name: str = 'Qwen/Qwen3-4B-Instruct-2507'
     device: str = 'cpu'
     max_new_tokens: int = 1024
     _tokenizer: Any = field(default=None, init=False, repr=False)
@@ -111,6 +112,7 @@ class QwenStructuredModel:
                 'content': (
                     f'{description} '
                     'Extract atomic clinical facts only. Do not include direct identifiers. '
+                    'The facts list MUST contain at least one item whenever the source contains clinical information. '
                     'Use concise dot-separated semantic paths. Repeat the same path when a field has multiple values. '
                     'Do not infer facts that are not supported by the source.'
                 ),

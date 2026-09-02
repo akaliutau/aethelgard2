@@ -8,14 +8,23 @@ from .domain import ArtifactRef
 
 @dataclass(frozen=True, slots=True)
 class ParentDirectoryCaseResolver:
+    """Resolve each artifact to its immediate parent directory.
+
+    This keeps CASE-001 and CASE-002 distinct even when the configured source
+    points at a wrapper directory such as ``demo/``.
+    """
+
     @property
     def fingerprint(self) -> str:
-        return 'case-resolver:parent-directory:v1'
+        return 'case-resolver:parent-directory:v2'
 
     def resolve(self, artifacts: Sequence[ArtifactRef]) -> Mapping[str, Sequence[ArtifactRef]]:
         grouped: dict[str, list[ArtifactRef]] = {}
         for artifact in artifacts:
-            parts = artifact.relpath.parts
-            case_id = parts[0] if len(parts) > 1 else artifact.relpath.stem
+            parent = artifact.relpath.parent
+            case_id = parent.name if parent.name else artifact.relpath.stem
             grouped.setdefault(case_id, []).append(artifact)
-        return {k: tuple(sorted(v, key=lambda a: str(a.relpath))) for k, v in sorted(grouped.items())}
+        return {
+            key: tuple(sorted(value, key=lambda a: str(a.relpath)))
+            for key, value in sorted(grouped.items())
+        }

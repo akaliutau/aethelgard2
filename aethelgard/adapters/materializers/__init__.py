@@ -1,6 +1,17 @@
 from .core import EvidenceFilesMaterializer
-from .embeddings import EmbeddingGemmaEncoder, MedSigLIPEncoder, MultimodalEmbeddingMaterializer
+from .embeddings import (
+    EmbeddingGemmaEncoder,
+    EvidenceFactsMaterializer,
+    MedSigLIPEncoder,
+    MultimodalEmbeddingMaterializer,
+    flatten_evidence,
+)
 
 __all__ = [
-    'EvidenceFilesMaterializer', 'EmbeddingGemmaEncoder', 'MedSigLIPEncoder', 'MultimodalEmbeddingMaterializer'
+    'EmbeddingGemmaEncoder',
+    'EvidenceFactsMaterializer',
+    'EvidenceFilesMaterializer',
+    'MedSigLIPEncoder',
+    'MultimodalEmbeddingMaterializer',
+    'flatten_evidence',
 ]

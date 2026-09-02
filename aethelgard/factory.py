@@ -6,6 +6,7 @@ from pathlib import Path
 from .adapters.extractors import FunctionGemmaEvidenceExtractor, RegexEvidenceExtractor, StructuredEvidenceExtractor
 from .adapters.materializers import (
     EmbeddingGemmaEncoder,
+    EvidenceFactsMaterializer,
     EvidenceFilesMaterializer,
     MedSigLIPEncoder,
     MultimodalEmbeddingMaterializer,
@@ -18,6 +19,13 @@ from .pipeline import Pipeline
 from .plugins import PluginRegistry
 from .privacy import DefaultEvidencePolicy
 from .readers import ReaderRegistry
+from .search import (
+    GaussianVectorProtector,
+    MultimodalQueryEncoder,
+    NumpyVaultSearchIndex,
+    RankedEvidenceSelector,
+    VaultSearch,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -62,21 +70,31 @@ def build_extractor(config: VaultConfig):
     return factory(config.extractor)
 
 
+def _build_encoders(config: VaultConfig):
+    text_encoder = EmbeddingGemmaEncoder(
+        model_name=config.embeddings.text_model,
+        dimensions=config.embeddings.text_dimensions,
+        device=config.embeddings.device,
+    )
+    image_encoder = MedSigLIPEncoder(
+        model_name=config.embeddings.image_model,
+        device=config.embeddings.device,
+    )
+    return text_encoder, image_encoder
+
+
 def build_components(config: VaultConfig) -> ProcessingComponents:
     materializers = [EvidenceFilesMaterializer()]
     if config.embeddings.enabled:
-        materializers.append(MultimodalEmbeddingMaterializer(
-            text_encoder=EmbeddingGemmaEncoder(
-                model_name=config.embeddings.text_model,
-                dimensions=config.embeddings.text_dimensions,
-                device=config.embeddings.device,
+        text_encoder, image_encoder = _build_encoders(config)
+        materializers.extend((
+            EvidenceFactsMaterializer(text_encoder=text_encoder),
+            MultimodalEmbeddingMaterializer(
+                text_encoder=text_encoder,
+                image_encoder=image_encoder,
+                text_weight=config.embeddings.text_weight,
+                image_weight=config.embeddings.image_weight,
             ),
-            image_encoder=MedSigLIPEncoder(
-                model_name=config.embeddings.image_model,
-                device=config.embeddings.device,
-            ),
-            text_weight=config.embeddings.text_weight,
-            image_weight=config.embeddings.image_weight,
         ))
     return ProcessingComponents(
         readers=ReaderRegistry(),
@@ -96,4 +114,36 @@ def build_pipeline(vault_root: Path, config: VaultConfig, components: Processing
         extractor=c.extractor,
         policy=c.policy,
         materializers=c.materializers,
+    )
+
+
+def build_search_service(vault) -> VaultSearch:
+    config = vault.config
+    if not config.embeddings.enabled:
+        raise RuntimeError(
+            'Search requires embeddings. Enable [embeddings] and run `aethelgard run`.'
+        )
+    if config.search.protection.kind != 'gaussian':
+        raise ValueError(f'Unknown vector protector: {config.search.protection.kind}')
+
+    text_encoder, image_encoder = _build_encoders(config)
+    encoder = MultimodalQueryEncoder(
+        text_encoder=text_encoder,
+        image_encoder=image_encoder,
+        text_weight=config.embeddings.text_weight,
+        image_weight=config.embeddings.image_weight,
+    )
+    index = NumpyVaultSearchIndex(vault)
+    selector = RankedEvidenceSelector(index)
+    protector = GaussianVectorProtector(
+        text_sigma=config.search.protection.text_sigma,
+        image_sigma=config.search.protection.image_sigma,
+    )
+    return VaultSearch(
+        encoder=encoder,
+        index=index,
+        selector=selector,
+        protector=protector,
+        default_top_k=config.search.top_k,
+        default_summary_facts=config.search.summary_facts,
     )
