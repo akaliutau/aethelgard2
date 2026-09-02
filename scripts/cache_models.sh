@@ -24,7 +24,7 @@ gcloud run jobs deploy "$CACHE_JOB_NAME" \
   --tasks 1 \
   --max-retries 1 \
   --cpu 2 \
-  --memory 4Gi \
+  --memory 8Gi \
   --task-timeout 45m \
   --add-volume "mount-path=${MODEL_MOUNT},type=cloud-storage,bucket=${MODEL_BUCKET},readonly=false" \
   --set-env-vars "HF_HOME=${HF_HOME},HF_HUB_CACHE=${HF_HUB_CACHE},AETHELGARD_CACHE_MODELS=${MODELS}" \

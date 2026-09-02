@@ -221,6 +221,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .env
+.env.cloud
 .aethelgard/
 .idea/
 my-med-vault
