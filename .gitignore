@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.aethelgard/
+.idea/
+my-med-vault
+notes.txt
+aggregated-dump.txt
+docs/
+
+

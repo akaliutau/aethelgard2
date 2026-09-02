@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aethelgard-vault"
+version = "0.4.0"
+description = "Semantic Git for heterogeneous medical documents"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [{name = "Aethelgard"}]
+dependencies = [
+  "typer>=0.16",
+  "rich>=13.9",
+  "pydantic>=2.10",
+  "fsspec>=2025.3",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+models = [
+  "numpy>=2.0",
+  "pillow>=11.0",
+  "torch>=2.6",
+  "transformers>=4.56",
+  "sentence-transformers>=5.0",
+  "huggingface-hub>=0.34",
+  "outlines>=1.0",
+]
+pdf = ["pypdf>=5.0"]
+gcs = ["gcsfs>=2025.3"]
+cloud = ["httpx>=0.28", "fastapi>=0.116", "uvicorn>=0.35"]
+test = ["pytest>=8.0"]
+all = [
+  "numpy>=2.0",
+  "pillow>=11.0",
+  "torch>=2.6",
+  "transformers>=4.56",
+  "sentence-transformers>=5.0",
+  "sentencepiece",
+  "huggingface-hub>=0.34",
+  "outlines>=1.0",
+  "pypdf>=5.0",
+  "gcsfs>=2025.3",
+  "httpx>=0.28",
+  "fastapi>=0.116",
+  "uvicorn>=0.35",
+]
+
+[project.scripts]
+aethelgard = "aethelgard.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["aethelgard"]
