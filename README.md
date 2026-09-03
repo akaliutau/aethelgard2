@@ -352,7 +352,27 @@ protect   create a protected query envelope
 
 ---
 
+## 📝 Citation
+If you use Aethelgard or our Empirical Noise methodology in your research, please cite our work:
+
+```
+@misc{kaliutau2026aethelgard,
+  title={Project Aethelgard: Decentralized Clinical Intelligence via Federated RAG},
+  author={Kaliutau, Aliaksei},
+  year={2026},
+  howpublished={\url{https://github.com/akaliutau/aethelgard2}},
+  note={Built for the GOAI-2026 Challenge}
+}
+```
+
+
 ## ⚖️ License
 
 Aethelgard is open-source software distributed under the **MIT License**.
+
+---
+*Built for the [GOAI Challenge](https://www.goaihz.com/en)* <br>
+*Sharing knowledge to save lives.*
+
+
 

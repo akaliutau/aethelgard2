@@ -54,38 +54,6 @@ It also ensures that generated vitals reflect the severity of the pathology (e.g
 The output is strictly constrained to a structured JSON schema containing the demographics, clinical history, vitals, radiographic labels, 
 a hidden diagnosis label, and the full admission note.
 
-## Generate datasets from scratch
-
-A. First we need to lift the limitations for Spot GPUs and A100 models, from 0 -> 1. Lifting limitations on spot resource is optional, 
-but lowering the cost.
-
-* Go to the Google Cloud Console in your browser.
-* Search for Quotas (IAM & Admin -> Quotas).
-* In the Filter bar, paste exactly these metrics: custom_model_serving_nvidia_a100_80gb_gpus, CustomModelServingPreemptibleCPUsPerProjectPerRegion.
-  and CustomModelServingPreemptibleA10080GBGPUsPerProjectPerRegion
-* Ensure the location is set to us-central1.
-* Select the checkbox next to the quota, click Edit Quotas, and request a limit of 1 (or 12 for CustomModelServingPreemptibleCPUsPerProjectPerRegion)
-
-B. Generate a small dataset from CheXpert, using notebook `notebooks/dataset-small.ipynb` and unpack the archive to `.cache/CheXpert`
-
-C. Deploy infra and run pipeline:
-
-```bash
-scripts/deploy_infra.sh
-gcloud ai models list --region=us-central1
-scripts/run_batch_gcp.sh .cache/CheXpert
-```
-
-The generated synthetic notes will be saved to /dataset.
-
-To complete the data preparation, we must generate the embeddings for data, using scripts 
-
-```bash
-python/generate_embeddings.py --config profiles/node_a.env`
-python/generate_embeddings.py --config profiles/node_b.env`
-```
-
-
 ## License 
 
 Original source of data: 
