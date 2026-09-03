@@ -1,0 +1,77 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00018
+MRN=SYN-1911B372
+EMAIL=patient.1911b372@example.test
+AGE=44
+SEX=Male
+HR=98
+BP=135/88 mmHg
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 44-year-old male presenting with a 3-day history of worsening shortness of breath, particularly when lying flat (orthopnea), and a non-productive cough. He denies fever, chills, chest pain, or recent trauma. He reports a history of hypertension, well-controlled with lisinopril, and hyperlipidemia, treated with atorvastatin. He denies smoking, alcohol use, or illicit drug use. Family history is significant for coronary artery disease in his father. Social history includes working as an accountant. He denies recent travel or sick contacts. He notes some mild swelling in his ankles over the past few days.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 44
+**Sex:** Male
+**Date:** 2024-02-29
+
+## History of Present Illness (HPI):
+
+Mr. Doe is a 44-year-old male presenting with a 3-day history of progressive dyspnea, worse with exertion and when supine (orthopnea). He also reports a non-productive cough. He denies fever, chills, chest pain, recent trauma, or significant changes in his diet. He notes mild bilateral ankle edema that has developed over the past few days.
+
+## Past Medical History (PMH):
+
+*   Hypertension (well-controlled on lisinopril)
+*   Hyperlipidemia (treated with atorvastatin)
+
+## Social History (SH):
+
+*   Accountant
+*   Denies smoking, alcohol, or illicit drug use.
+
+## Family History (FH):
+
+*   Father with coronary artery disease.
+
+## Review of Systems (ROS):
+
+*   **Constitutional:** Denies fever, chills, weight loss.
+*   **Cardiovascular:** Denies chest pain, palpitations. Reports ankle edema.
+*   **Respiratory:** Reports dyspnea, non-productive cough, orthopnea.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Neurological:** Denies headache, dizziness, weakness, numbness.
+
+## Physical Examination:
+
+*   **General:** Alert and oriented, appears mildly distressed due to dyspnea.
+*   **Vitals:** HR 98 bpm, BP 135/88 mmHg, RR 22 breaths/min, SpO2 92% on room air, Temp 37.0°C.
+*   **HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD noted at rest.
+*   **Cardiovascular:** Regular rate and rhythm. S1 and S2 auscultated. No murmurs, rubs, or gallops appreciated.
+*   **Respiratory:** Lungs clear to auscultation bilaterally, but breath sounds are diminished at the bases. No wheezes or crackles noted.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+*   **Extremities:** Mild (1+) bilateral pitting edema in the ankles.
+
+## Investigations:
+
+*   **Chest X-ray:** Shows a moderate right-sided pleural effusion. No evidence of consolidation or pulmonary edema.
+
+## Assessment:
+
+1.  **Dyspnea and Pleural Effusion:** The patient's presentation of progressive dyspnea, orthopnea, non-productive cough, and ankle edema, along with the finding of a pleural effusion on chest X-ray, is highly suggestive of congestive heart failure (CHF). While the X-ray does not show overt pulmonary edema, pleural effusions are a common finding in CHF, often occurring due to increased hydrostatic pressure.
+
+## Plan:
+
+1.  **Admit to Cardiology service:** For further evaluation and management of suspected CHF.
+2.  **Oxygen:** Administer supplemental oxygen via nasal cannula to maintain SpO2 > 92%.
+3.  **Labs:** Order comprehensive metabolic panel (CMP), complete blood count (CBC), brain natriuretic peptide (BNP), troponin, and coagulation studies.
+4.  **ECG:** Obtain a 12-lead ECG to assess for ischemia or arrhythmias.
+5.  **Echocardiogram:** Order an echocardiogram to evaluate cardiac structure and function (ejection fraction, diastolic function, valvular disease).
+6.  **Diuretics:** Initiate intravenous furosemide (Lasix) 40 mg IV now, and potentially increase dose based on response and weight.
+7.  **Fluid Restriction:** Implement fluid restriction (e.g., 2L/day).
+8.  **Monitor:** Closely monitor vital signs, oxygen saturation, respiratory status, and urine output. Daily weights.
+9.  **Consult Cardiology:** Request urgent cardiology consultation for further management and potential workup for underlying etiology (e.g., ischemic heart disease).

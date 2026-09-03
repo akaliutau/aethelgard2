@@ -1,0 +1,78 @@
+PATIENT ID: patient00065
+MRN: SYN-0049CE59
+CONTACT: patient.0049ce59@example.test
+
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 67
+**Sex:** Male
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset shortness of breath and pleuritic chest pain.
+
+## History of Present Illness (HPI)
+Patient is a 67-year-old male with a history of hypertension, hyperlipidemia, and type 2 diabetes mellitus who presents with acute onset shortness of breath and sharp, pleuritic chest pain that began approximately 2 hours ago while at rest. The pain is localized to the right chest and worsens with deep inspiration and coughing. He denies fever, chills, cough, sputum production, recent trauma, or recent travel. He has a significant smoking history (40 pack-years, quit 10 years ago). He denies known asthma or COPD, but reports occasional wheezing with exertion. He denies leg swelling or recent immobilization.
+
+## Past Medical History (PMH)
+- Hypertension
+- Hyperlipidemia
+- Type 2 Diabetes Mellitus
+- 40 pack-year smoking history (quit 10 years ago)
+
+## Medications
+- Lisinopril
+- Atorvastatin
+- Metformin
+
+## Allergies
+- NKDA
+
+## Social History
+- Former smoker (40 pack-years, quit 10 years ago)
+- Denies alcohol or illicit drug use.
+
+## Family History
+- Non-contributory
+
+## Review of Systems (ROS)
+- **Constitutional:** Denies fever, chills, weight loss.
+- **Respiratory:** Reports acute onset shortness of breath and pleuritic chest pain. Denies cough or sputum.
+- **Cardiovascular:** Denies chest pain (other than pleuritic), palpitations, edema.
+- **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+- **Neurological:** Denies headache, dizziness, weakness, numbness.
+- **Musculoskeletal:** Denies joint pain, muscle pain.
+
+## Physical Examination
+**General:** Alert and oriented, appears anxious, in mild respiratory distress.
+**Vitals:** HR 115 bpm, BP 130/85 mmHg, RR 24 breaths/min, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+**HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD.
+**Lungs:** Clear to auscultation bilaterally, no wheezes, rhonchi, or crackles. Decreased breath sounds noted at the right base, but not definitive.
+**Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Neurological:** Grossly intact.
+**Skin:** Warm, dry, no rashes or lesions.
+
+## Initial Assessment
+67-year-old male with risk factors (age, smoking history, hypertension, hyperlipidemia, diabetes) presenting with acute onset pleuritic chest pain and shortness of breath. Vitals show tachycardia (HR 115) and mild hypoxemia (SpO2 92% on RA). Physical exam is largely unremarkable, with clear lungs bilaterally, although decreased breath sounds at the right base are noted. The presentation is concerning for pulmonary embolism (PE), given the acute onset, pleuritic chest pain, shortness of breath, tachycardia, and hypoxemia, despite clear lung fields on auscultation. Other differentials include acute coronary syndrome (less likely given pleuritic nature of pain), pneumothorax (less likely given clear lung sounds, but needs to be ruled out), pneumonia (less likely given absence of fever, cough, sputum, and clear lung fields), and musculoskeletal pain (less likely given shortness of breath and vital sign abnormalities). The chest X-ray was reviewed and showed no evidence of consolidation, edema, or pleural effusion.
+
+## Plan
+1.  **Immediate:** Place patient on supplemental oxygen via nasal cannula to maintain SpO2 > 94%. Obtain continuous cardiac monitoring. Establish IV access.
+2.  **Diagnostics:**
+    *   STAT Chest X-ray (already performed, negative for consolidation, edema, effusion).
+    *   STAT EKG to rule out acute cardiac ischemia.
+    *   STAT D-dimer level.
+    *   STAT CT Angiogram (CTA) of the chest to evaluate for pulmonary embolism. Given the high clinical suspicion (Wells score likely intermediate to high), proceed directly to CTA.
+    *   CBC, BMP, Troponin.
+    *   ABG if respiratory status worsens.
+3.  **Treatment:**
+    *   Initiate anticoagulation (e.g., LMWH) pending confirmation of PE, given high clinical suspicion and potential for rapid deterioration. Discuss risks/benefits with patient.
+    *   Pain management with IV analgesics (e.g., morphine) as needed.
+    *   Monitor vital signs closely.
+4.  **Consults:** Cardiology consult if EKG or troponin are abnormal, or if ACS remains a concern. Pulmonary consult if needed.
+
+## Disposition
+Admit to the hospital for further evaluation and management. Given the high suspicion for PE, admission to a monitored bed (e.g., telemetry or ICU depending on severity) is warranted.
+

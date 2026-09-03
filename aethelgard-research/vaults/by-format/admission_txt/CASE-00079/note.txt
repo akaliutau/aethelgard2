@@ -1,0 +1,67 @@
+PATIENT ID: patient00079
+MRN: SYN-CF187C21
+CONTACT: patient.cf187c21@example.test
+
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 43
+**Sex:** Male
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset right-sided chest pain and shortness of breath.
+
+## History of Present Illness
+Patient is a 43-year-old male with a 20-pack-year smoking history who presents with sudden onset of sharp, pleuritic right-sided chest pain that began approximately 2 hours ago while at rest. The pain is described as 7/10 in severity and is exacerbated by deep breathing. He also reports associated shortness of breath, but denies cough, fever, chills, recent illness, or trauma. He denies any leg swelling or pain. He denies dizziness or syncope.
+
+## Past Medical History
+None reported.
+
+## Social History
+Smokes 1 pack per day for 20 years. Occasional alcohol use.
+
+## Family History
+Non-contributory.
+
+## Medications
+None reported.
+
+## Allergies
+NKDA.
+
+## Review of Systems
+Constitutional: Denies fever, chills, weight loss.
+Cardiovascular: Denies chest pain (other than current complaint), palpitations, edema.
+Respiratory: Reports shortness of breath, denies cough, wheezing, sputum production.
+Neurological: Denies headache, dizziness, syncope, focal weakness.
+GI: Denies nausea, vomiting, diarrhea, abdominal pain.
+GU: Denies dysuria, frequency, hematuria.
+Musculoskeletal: Denies joint pain, muscle weakness.
+
+## Physical Examination
+**General:** Alert and oriented, appears anxious, in mild respiratory distress.
+**Vitals:** HR 110 bpm, BP 110/70 mmHg, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+**HEENT:** Atraumatic, normocephalic.
+**Neck:** Supple, no JVD.
+**Lungs:** Decreased breath sounds on the right side compared to the left. No wheezes or crackles auscultated bilaterally. Percussion reveals hyperresonance on the right side.
+**Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Neurological:** Grossly intact.
+**Skin:** Warm, dry, no rashes or lesions.
+
+## Investigations
+Chest X-ray ordered and reviewed. Findings show a right-sided pneumothorax.
+
+## Assessment
+1.  **Right-sided Spontaneous Pneumothorax:** Based on the acute onset of pleuritic chest pain, shortness of breath, decreased breath sounds, hyperresonance to percussion on the right, and confirmed by chest X-ray.
+
+## Plan
+1.  **Oxygen:** Apply supplemental oxygen via nasal cannula to maintain SpO2 > 94%.
+2.  **Pain Management:** Administer IV morphine or fentanyl for pain control.
+3.  **Chest Tube Placement:** Consult Thoracic Surgery for placement of a right-sided chest tube (likely a small-bore catheter) for drainage of air and lung re-expansion.
+4.  **Monitoring:** Continuous cardiac monitoring and frequent reassessment of respiratory status and pain level.
+5.  **Smoking Cessation Counseling:** Provide education and resources for smoking cessation.
+6.  **Discharge Planning:** Discuss potential need for pleurodesis or surgical intervention if recurrent pneumothorax occurs. Educate patient on signs and symptoms of pneumothorax recurrence.
+

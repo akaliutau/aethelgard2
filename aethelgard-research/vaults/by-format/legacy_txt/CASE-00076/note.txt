@@ -1,0 +1,82 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00076
+MRN=SYN-A8FB5E4C
+EMAIL=patient.a8fb5e4c@example.test
+AGE=39
+SEX=Female
+HR=110
+BP=110/70 mmHg
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 39-year-old female presenting to the emergency department with acute onset of shortness of breath and pleuritic chest pain on the right side, which began approximately 4 hours ago while she was walking her dog. She denies any recent trauma, cough, fever, or recent illness. She has no significant past medical history, no known allergies, and is not currently taking any medications. She is a non-smoker and denies illicit drug use. She reports feeling slightly lightheaded and dizzy upon exertion. Family history is non-contributory. Social history is unremarkable.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 39
+**Sex:** Female
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset shortness of breath and right-sided pleuritic chest pain.
+
+## History of Present Illness
+Patient is a 39-year-old female presenting with acute onset of shortness of breath and sharp, pleuritic chest pain localized to the right side. Symptoms began approximately 4 hours ago while walking. The pain is exacerbated by deep inspiration and coughing. She denies any preceding trauma, fever, cough, recent illness, or known risk factors for pulmonary embolism (e.g., recent surgery, immobilization, oral contraceptive use, family history). She reports feeling slightly lightheaded and dizzy with exertion. She denies any lower extremity swelling or redness.
+
+## Past Medical History
+None reported.
+
+## Medications
+None reported.
+
+## Allergies
+None known.
+
+## Social History
+Non-smoker, denies illicit drug use. Works as an accountant.
+
+## Family History
+Non-contributory.
+
+## Review of Systems
+*   **General:** Denies fever, chills, weight loss.
+*   **HEENT:** Denies headache, vision changes, hearing loss, nasal congestion, sore throat.
+*   **Cardiovascular:** Denies palpitations, chest pain (other than described), edema.
+*   **Respiratory:** Reports shortness of breath and pleuritic chest pain (as above). Denies cough, wheezing, sputum production.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Genitourinary:** Denies dysuria, frequency, urgency, hematuria.
+*   **Neurological:** Denies headache, dizziness (except as related to exertion/SOB), weakness, numbness, tingling.
+*   **Musculoskeletal:** Denies joint pain, muscle weakness.
+*   **Psychiatric:** Denies anxiety, depression.
+
+## Physical Examination
+*   **General:** Alert and oriented, appears anxious, in mild respiratory distress.
+*   **Vitals:** HR 110 bpm, BP 110/70 mmHg, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+*   **HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD.
+*   **Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+*   **Respiratory:** Tachypneic (RR 24). Auscultation reveals decreased breath sounds at the right lung base. No wheezes or crackles appreciated. Percussion reveals dullness to percussion at the right lung base.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+*   **Neurological:** Grossly intact. No focal deficits.
+*   **Skin:** Warm, dry, no rashes or lesions.
+
+## Investigations
+*   **Chest X-ray:** Ordered and pending. (Note: Based on the provided ground truth, the X-ray shows uncertain/borderline pleural effusion, but no pneumothorax, consolidation, mass, or fracture.)
+
+## Assessment
+1.  Acute onset right-sided pleuritic chest pain and shortness of breath.
+2.  Possible causes include pleural effusion, pleurisy, pulmonary embolism, musculoskeletal pain, pericarditis. Given the decreased breath sounds and dullness to percussion at the right base, pleural effusion is high on the differential.
+
+## Plan
+1.  Obtain chest X-ray (already ordered). Review results upon availability.
+2.  Administer supplemental oxygen via nasal cannula to maintain SpO2 > 94%.
+3.  Obtain EKG to rule out cardiac etiology (e.g., pericarditis, ischemia).
+4.  Obtain CBC, CMP, D-dimer, BNP, troponin.
+5.  Consider CT angiography of the chest if pulmonary embolism is suspected based on clinical presentation and D-dimer results.
+6.  Consider thoracentesis if significant pleural effusion is confirmed on imaging and etiology is unclear.
+7.  Continuous cardiac monitoring.
+8.  Pain management with NSAIDs or acetaminophen.
+9.  Admit to observation unit or inpatient ward pending further workup and management.

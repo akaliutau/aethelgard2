@@ -1,0 +1,89 @@
+PATIENT ID: patient00038
+MRN: SYN-B6E8AA03
+CONTACT: patient.b6e8aa03@example.test
+
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 78
+**Sex:** Male
+**Date:** 2024-02-29
+
+## History of Present Illness (HPI):
+
+Mr. Doe is a 78-year-old male with a history of hypertension, hyperlipidemia, and atrial fibrillation (on warfarin) presenting with worsening shortness of breath (dyspnea) over the past 3 days. The dyspnea is exertional initially but has progressed to occurring at rest. He reports a non-productive cough and denies fever, chills, or chest pain. He notes decreased exercise tolerance and increased fatigue. He denies recent travel or sick contacts.
+
+## Past Medical History (PMH):
+
+*   Hypertension
+*   Hyperlipidemia
+*   Atrial Fibrillation (on warfarin)
+
+## Social History:
+
+Lives at home with wife, independent in ADLs prior to this illness. Denies smoking. Occasional alcohol use (1-2 beers/week).
+
+## Family History:
+
+Non-contributory.
+
+## Medications:
+
+*   Warfarin
+*   Lisinopril
+*   Atorvastatin
+
+## Allergies:
+
+NKDA
+
+## Review of Systems (ROS):
+
+*   **General:** Fatigue, decreased exercise tolerance.
+*   **HEENT:** Negative.
+*   **Respiratory:** Shortness of breath, non-productive cough.
+*   **Cardiovascular:** Denies chest pain, palpitations.
+*   **GI:** Negative.
+*   **GU:** Negative.
+*   **Neurologic:** Negative.
+*   **Skin:** Negative.
+*   **Musculoskeletal:** Negative.
+
+## Physical Examination:
+
+*   **General:** Elderly male, appears mildly distressed, sitting upright in chair.
+*   **Vitals:** HR 115 bpm, BP 130/80 mmHg, RR 24 breaths/min, SpO2 90% on room air, Temp 37.0°C (98.6°F).
+*   **HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD noted at rest.
+*   **Lungs:** Auscultation reveals bilateral crackles, predominantly at the bases. Decreased breath sounds at the right base.
+*   **Cardiovascular:** Tachycardic, regular rhythm (consistent with known Afib, rate likely elevated due to distress/underlying condition). No murmurs, rubs, or gallops appreciated.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+*   **Extremities:** No edema noted. Pulses 2+ bilaterally.
+*   **Neurologic:** Alert and oriented x3. Grossly intact motor and sensory function.
+
+## Investigations:
+
+*   **Chest X-ray:** Shows bilateral pleural effusions, larger on the right, and associated atelectasis at the lung bases.
+*   **EKG:** Shows atrial fibrillation with rapid ventricular response (RVR).
+*   **Labs:** Pending (CBC, BMP, BNP, Troponin, Coags).
+
+## Assessment:
+
+1.  **Acute decompensated heart failure (ADHF):** Likely etiology for the patient's presentation, supported by worsening dyspnea, bilateral crackles, tachycardia, hypoxia, and radiographic findings of pleural effusions and atelectasis. The atrial fibrillation with RVR may be contributing to or exacerbated by the heart failure.
+2.  **Atrial Fibrillation with Rapid Ventricular Response (RVR):** Known history, currently uncontrolled.
+
+## Plan:
+
+1.  **Admit to Cardiology service.**
+2.  **Oxygen therapy:** Titrate to maintain SpO2 >92% (currently on 2L NC).
+3.  **Cardiac monitoring:** Continuous EKG monitoring.
+4.  **Medications:**
+    *   **Diuretics:** IV Furosemide 40mg now, then repeat dose q12h or PRN for fluid overload.
+    *   **Rate control:** IV Metoprolol 2.5mg slow push now, may repeat or start oral beta-blocker once stable.
+    *   **Anticoagulation:** Continue warfarin, monitor INR.
+5.  **Labs:** Repeat BMP, BNP, Troponin, Coags in the morning.
+6.  **Echocardiogram:** Obtain within 24 hours to assess cardiac function and etiology of heart failure.
+7.  **Fluid restriction:** 2L/day.
+8.  **Sodium restriction:** 2g/day.
+9.  **Consult Cardiology:** For further management of heart failure and atrial fibrillation.
+10. **Monitor:** Closely monitor respiratory status, vital signs, urine output, and electrolytes.
+

@@ -1,0 +1,89 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00066
+MRN=SYN-870E6864
+EMAIL=patient.870e6864@example.test
+AGE=61
+SEX=Male
+HR=115
+BP=105/70 mmHg
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 61-year-old male with a history of hypertension and hyperlipidemia, presenting to the emergency department with acute onset shortness of breath and left-sided chest pain that started approximately 2 hours ago while gardening. He describes the pain as sharp and pleuritic, worsening with deep inspiration and coughing. He denies any recent trauma, fever, chills, or productive cough. He has a 30 pack-year smoking history, quitting 5 years ago. He reports feeling lightheaded and dizzy upon standing. Past medical history is significant for hypertension treated with lisinopril and hyperlipidemia treated with atorvastatin. He denies any history of asthma, COPD, or previous pneumothorax. Family history is non-contributory. Social history includes alcohol use (1-2 beers per week) and past smoking.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 61
+**Sex:** Male
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset shortness of breath and left-sided chest pain.
+
+## History of Present Illness (HPI)
+Patient is a 61-year-old male with a history of hypertension and hyperlipidemia presenting with acute onset shortness of breath and left-sided chest pain that began approximately 2 hours ago while gardening. The pain is described as sharp and pleuritic, exacerbated by deep inspiration and coughing. He denies any recent trauma, fever, chills, or productive cough. He reports feeling lightheaded and dizzy upon standing. He denies any recent illness or travel.
+
+## Past Medical History (PMH)
+- Hypertension (treated with lisinopril)
+- Hyperlipidemia (treated with atorvastatin)
+
+## Social History (SH)
+- Smoker (30 pack-years, quit 5 years ago)
+- Alcohol (1-2 beers/week)
+
+## Family History (FH)
+Non-contributory.
+
+## Review of Systems (ROS)
+- General: Denies fever, chills, weight loss.
+- HEENT: Denies headache, vision changes, hearing loss, nasal congestion.
+- Cardiovascular: Denies palpitations, edema.
+- Respiratory: Reports acute onset shortness of breath, pleuritic chest pain.
+- Gastrointestinal: Denies nausea, vomiting, diarrhea, abdominal pain.
+- Genitourinary: Denies dysuria, frequency, hematuria.
+- Neurological: Reports lightheadedness.
+- Musculoskeletal: Denies joint pain, muscle weakness.
+- Psychiatric: Denies depression, anxiety.
+
+## Physical Examination
+**General:** Anxious appearing male in moderate respiratory distress.
+**Vitals:** HR 115 bpm, BP 105/70 mmHg, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+**HEENT:** Normocephalic, atraumatic. Mucous membranes slightly dry. No JVD.
+**Cardiovascular:** Tachycardic, regular rhythm. No murmurs, rubs, or gallops. Peripheral pulses 2+ bilaterally.
+**Respiratory:** Tachypneic (RR 24). Decreased breath sounds on the left side compared to the right. Hyperresonance to percussion on the left side. No wheezes or crackles auscultated on the right. Absent breath sounds in the left upper and mid lung fields. No subcutaneous emphysema noted.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Neurological:** Alert and oriented x3. Grossly intact motor and sensory function.
+**Skin:** Warm, dry, no rashes or lesions.
+
+## Investigations
+- Chest X-ray (CXR): Ordered and pending.
+- ECG: Ordered.
+- Labs: CBC, BMP, Troponin, D-dimer ordered.
+
+## Assessment
+1.  **Acute Shortness of Breath and Left-Sided Chest Pain:** Differential diagnosis includes pneumothorax, pulmonary embolism, acute coronary syndrome, pneumonia, pleurisy, musculoskeletal pain. Given the acute onset, pleuritic nature of the pain, decreased breath sounds, and hyperresonance on the left side, spontaneous pneumothorax is high on the differential.
+2.  **Tachycardia and Mild Hypotension:** Likely secondary to pain, anxiety, and potential hypovolemia or decreased cardiac output related to the underlying respiratory issue.
+3.  **Hypoxia:** SpO2 92% on room air, consistent with impaired gas exchange.
+
+## Plan
+1.  **Immediate Management:**
+    - Place patient on supplemental oxygen via nasal cannula to maintain SpO2 > 94%.
+    - Obtain STAT Chest X-ray to confirm or rule out pneumothorax.
+    - Obtain ECG to rule out cardiac etiology.
+    - Obtain labs (CBC, BMP, Troponin, D-dimer).
+    - Establish IV access.
+    - Continuous cardiac monitoring.
+2.  **Definitive Management (pending CXR confirmation):**
+    - If pneumothorax is confirmed:
+        - Assess size and stability. If large or symptomatic, proceed with chest tube placement (needle decompression if tension pneumothorax suspected).
+        - Consult Thoracic Surgery.
+    - If pneumothorax is ruled out, continue workup for other potential causes (PE, ACS, etc.) based on ECG and lab results.
+3.  **Pain Management:** Administer analgesics (e.g., morphine) as needed for chest pain.
+4.  **Monitoring:** Closely monitor vital signs, respiratory status, and oxygen saturation.
+
+## Follow Up
+Re-evaluate after CXR results are available and initial interventions are implemented.

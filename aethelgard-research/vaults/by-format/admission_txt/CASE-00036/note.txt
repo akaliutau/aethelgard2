@@ -1,0 +1,83 @@
+PATIENT ID: patient00036
+MRN: SYN-D91F977F
+CONTACT: patient.d91f977f@example.test
+
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 63
+**Sex:** Male
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset shortness of breath and right-sided pleuritic chest pain.
+
+## History of Present Illness (HPI)
+Patient is a 63-year-old male with a history of hypertension, hyperlipidemia, and type 2 diabetes mellitus who presents with acute onset shortness of breath and sharp, right-sided pleuritic chest pain that began approximately 4 hours ago while gardening. The pain is exacerbated by deep inspiration and coughing. He denies fever, chills, cough, sputum production, recent trauma, or sick contacts. He reports lightheadedness and dizziness. He has a significant smoking history (40 pack-years, quit 5 years ago).
+
+## Past Medical History (PMH)
+- Hypertension
+- Hyperlipidemia
+- Type 2 Diabetes Mellitus
+- Former Smoker (40 pack-years, quit 5 years ago)
+
+## Medications
+- Lisinopril
+- Atorvastatin
+- Metformin
+
+## Allergies
+NKDA
+
+## Social History
+Former smoker. Denies alcohol or illicit drug use.
+
+## Family History
+Non-contributory
+
+## Review of Systems (ROS)
+- **General:** Lightheadedness, dizziness.
+- **HEENT:** Negative.
+- **Cardiovascular:** Negative.
+- **Respiratory:** Acute onset shortness of breath, right-sided pleuritic chest pain. Denies cough or sputum.
+- **Gastrointestinal:** Negative.
+- **Genitourinary:** Negative.
+- **Musculoskeletal:** Negative.
+- **Neurological:** Negative.
+- **Skin:** Negative.
+- **Psychiatric:** Negative.
+
+## Physical Examination
+**General:** Anxious appearing male in moderate respiratory distress.
+**Vitals:** HR 115 bpm, BP 105/68 mmHg, SpO2 88% on room air, Temp 37.0°C (98.6°F).
+**HEENT:** Normocephalic, atraumatic. Mucous membranes slightly dry. Sclerae anicteric.
+**Cardiovascular:** Tachycardic, regular rhythm. No murmurs, rubs, or gallops. Peripheral pulses 2+ bilaterally.
+**Respiratory:** Tachypneic (RR 28). Decreased breath sounds on the right side compared to the left. Hyperresonance to percussion on the right side. No wheezes or crackles appreciated on the left. No subcutaneous emphysema noted.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Neurological:** Alert and oriented to person, place, and time. Gross motor and sensory function intact.
+**Skin:** Warm, dry. No rashes or lesions.
+
+## Assessment
+1.  **Acute Respiratory Distress:** Likely secondary to underlying pulmonary pathology.
+2.  **Right-sided Pleuritic Chest Pain and Dyspnea:** Highly suspicious for pneumothorax given the acute onset, pleuritic nature, decreased breath sounds, and hyperresonance on the right side. The patient's history of smoking increases the risk for spontaneous pneumothorax, even though he quit 5 years ago. His vital signs (tachycardia, hypotension, hypoxia) indicate hemodynamic compromise and significant respiratory distress.
+
+## Plan
+1.  **Immediate:** Apply supplemental oxygen via non-rebreather mask to target SpO2 > 90%. Obtain IV access (2 large bore). Draw stat labs including CBC, BMP, ABG, D-dimer, troponin. Obtain portable chest X-ray (already done, pending formal read but clinical suspicion high). Consider stat CT chest if X-ray is inconclusive or if tension pneumothorax is suspected clinically.
+2.  **Definitive Management:** Based on clinical suspicion and likely radiographic findings (pending formal read), prepare for emergent chest tube placement (thoracostomy) on the right side for decompression and drainage. Consult Thoracic Surgery.
+3.  **Monitoring:** Continuous cardiac monitoring, pulse oximetry, frequent vital sign checks. Monitor respiratory status closely.
+4.  **Further Workup:** Once stabilized, consider further evaluation for underlying lung disease (e.g., PFTs, HRCT chest) to assess risk for recurrence.
+5.  **Pain Management:** Administer analgesics (e.g., morphine) as needed for chest pain, titrating carefully given potential respiratory depression and hemodynamic instability.
+
+## Orders
+- O2 via NRB mask
+- IV access x 2
+- Labs: CBC, BMP, ABG, D-dimer, Troponin
+- Portable CXR (already obtained)
+- Continuous cardiac monitoring
+- Continuous pulse oximetry
+- Frequent VS monitoring
+- Consult Thoracic Surgery
+- Prepare for emergent chest tube placement (right side)
+- Morphine PRN for pain
+

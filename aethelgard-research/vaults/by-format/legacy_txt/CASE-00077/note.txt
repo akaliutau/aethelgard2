@@ -1,0 +1,109 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00077
+MRN=SYN-D25BA9D5
+EMAIL=patient.d25ba9d5@example.test
+AGE=65
+SEX=Female
+HR=110
+BP=100/65 mmHg
+SpO2=90
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 65-year-old female with a history of hypertension, hyperlipidemia, and osteoarthritis presenting to the emergency department with acute onset shortness of breath and pleuritic chest pain that started approximately 2 hours ago while gardening. She denies any recent trauma, fever, chills, cough, or sputum production. She reports feeling well prior to the onset of symptoms. She denies any history of smoking. Family history is significant for coronary artery disease in her father. Social history is negative for alcohol or illicit drug use. She takes lisinopril, atorvastatin, and acetaminophen as needed.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 65
+**Sex:** Female
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+
+Acute onset shortness of breath and pleuritic chest pain.
+
+## History of Present Illness
+
+Patient is a 65-year-old female presenting with acute onset shortness of breath and right-sided pleuritic chest pain that began approximately 2 hours ago while gardening. The pain is described as sharp and worsens with inspiration. She denies any preceding trauma, cough, fever, chills, or sputum production. She reports feeling well prior to the onset of symptoms. She denies any recent travel or immobilization.
+
+## Past Medical History
+
+*   Hypertension
+*   Hyperlipidemia
+*   Osteoarthritis
+
+## Medications
+
+*   Lisinopril
+*   Atorvastatin
+*   Acetaminophen PRN
+
+## Allergies
+
+NKDA
+
+## Social History
+
+Denies smoking, alcohol, or illicit drug use.
+
+## Family History
+
+Father with coronary artery disease.
+
+## Review of Systems
+
+*   **Constitutional:** Denies fever, chills, weight loss.
+*   **Respiratory:** Reports acute onset shortness of breath and pleuritic chest pain. Denies cough or sputum.
+*   **Cardiovascular:** Denies palpitations or chest pain (other than pleuritic pain).
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Neurological:** Denies headache, dizziness, weakness, numbness.
+
+## Physical Examination
+
+*   **General:** Anxious appearing female in moderate respiratory distress.
+*   **Vitals:** HR 110 bpm, BP 100/65 mmHg, SpO2 90% on room air, Temp 37.0°C (98.6°F).
+*   **HEENT:** Atraumatic. Mucous membranes slightly dry.
+*   **Neck:** Supple, no JVD.
+*   **Lungs:** Decreased breath sounds on the right side. Hyperresonance to percussion on the right side. No wheezes or crackles auscultated bilaterally.
+*   **Cardiovascular:** Tachycardic, regular rhythm. No murmurs, rubs, or gallops.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+*   **Extremities:** No edema, cyanosis, or clubbing.
+*   **Skin:** Warm, dry, no rashes.
+
+## Investigations
+
+*   **Chest X-ray (CXR):** Shows a moderate right-sided pneumothorax with evidence of lung collapse. No evidence of consolidation or pleural effusion.
+
+## Assessment
+
+1.  **Right-sided Spontaneous Pneumothorax:** Based on the acute onset of pleuritic chest pain and shortness of breath, physical exam findings of decreased breath sounds and hyperresonance on the right, and CXR confirmation of a right pneumothorax. The patient's age and lack of underlying lung disease suggest a primary spontaneous pneumothorax, although secondary causes should be considered.
+2.  **Hypoxia:** Secondary to the pneumothorax and lung collapse.
+3.  **Tachycardia:** Likely secondary to hypoxia and pain/anxiety.
+4.  **Hypotension:** Possibly related to pain, anxiety, or early signs of tension pneumothorax (though no other signs like JVD or tracheal deviation are present).
+
+## Plan
+
+1.  **Immediate Management:**
+    *   Supplemental oxygen via nasal cannula to maintain SpO2 > 92%.
+    *   Establish IV access (2 large bore).
+    *   Continuous cardiac monitoring.
+    *   Obtain stat arterial blood gas (ABG).
+    *   Prepare for chest tube insertion.
+2.  **Definitive Management:**
+    *   **Chest Tube Placement:** Insert a right-sided chest tube (likely size 28-32 French) connected to a water seal drainage system to re-expand the lung. Consider placement in the 4th or 5th intercostal space, mid-axillary line.
+    *   **Pain Management:** Administer IV analgesics (e.g., morphine or fentanyl) for pleuritic chest pain.
+3.  **Further Evaluation:**
+    *   Repeat CXR after chest tube placement to assess lung re-expansion.
+    *   Monitor vital signs closely for signs of tension pneumothorax (hypotension, tachycardia, JVD, tracheal deviation).
+    *   Consider CT chest if underlying lung disease is suspected or if pneumothorax recurs.
+4.  **Consults:**
+    *   Thoracic Surgery consult for consideration of pleurodesis or surgical intervention if recurrent or persistent air leak.
+5.  **Disposition:**
+    *   Admission to the hospital for monitoring and management of pneumothorax.
+
+## Prognosis
+
+Prognosis is generally good with appropriate management (chest tube placement). Recurrence is possible, especially in taller, thinner individuals or smokers (though this patient denies smoking). Secondary spontaneous pneumothorax has a higher recurrence rate and is associated with underlying lung disease.

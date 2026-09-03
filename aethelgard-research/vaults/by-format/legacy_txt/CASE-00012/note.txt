@@ -1,0 +1,79 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00012
+MRN=SYN-02CE0393
+EMAIL=patient.02ce0393@example.test
+AGE=61
+SEX=Female
+HR=92
+BP=130/80 mmHg
+SpO2=93
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 61-year-old female presenting with progressive shortness of breath over the past 3 weeks, initially exertional but now present at rest. She also reports a non-productive cough and mild pleuritic chest pain on the right side. She denies fever, chills, or recent illness. Past medical history is significant for hypertension, hyperlipidemia, and osteoarthritis. She denies smoking history. Family history is non-contributory. Social history includes sedentary lifestyle. Medications include lisinopril and atorvastatin.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 61
+**Sex:** Female
+**Date:** 2024-02-29
+
+## Chief Complaint
+Progressive shortness of breath.
+
+## History of Present Illness
+Ms. Doe is a 61-year-old female presenting with a 3-week history of worsening shortness of breath. The dyspnea initially occurred with exertion (e.g., climbing stairs) but has progressed to occur even at rest. She also reports a non-productive cough and mild, intermittent pleuritic chest pain localized to the right side. She denies fever, chills, night sweats, weight loss, or recent travel. She denies any history of trauma or recent infection.
+
+## Past Medical History
+- Hypertension
+- Hyperlipidemia
+- Osteoarthritis
+
+## Medications
+- Lisinopril
+- Atorvastatin
+
+## Allergies
+- NKDA
+
+## Social History
+- Denies smoking. Drinks alcohol occasionally. Sedentary lifestyle.
+
+## Family History
+- Non-contributory
+
+## Review of Systems
+- **Constitutional:** Denies fever, chills, weight loss, night sweats.
+- **Respiratory:** Positive for shortness of breath, cough (non-productive), pleuritic chest pain.
+- **Cardiovascular:** Denies chest pain, palpitations, edema.
+- **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+- **Neurological:** Denies headache, dizziness, weakness, numbness.
+
+## Physical Examination
+- **General:** Alert and oriented, appears slightly uncomfortable due to dyspnea.
+- **Vitals:** HR 92 bpm, BP 130/80 mmHg, SpO2 93% on room air, Temp 37.0°C.
+- **HEENT:** Normal.
+- **Neck:** Supple, no lymphadenopathy.
+- **Lungs:** Decreased breath sounds at the right lung base. Dullness to percussion at the right lung base. No wheezes or crackles appreciated.
+- **Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops.
+- **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+- **Extremities:** No edema, normal pulses.
+- **Skin:** No rashes or lesions.
+
+## Investigations
+- **Chest X-ray:** Shows a moderate right-sided pleural effusion. No evidence of consolidation or pneumothorax.
+
+## Assessment
+1.  **Right-sided Pleural Effusion:** The patient presents with symptoms (dyspnea, cough, pleuritic chest pain) and physical exam findings (decreased breath sounds, dullness to percussion) consistent with a pleural effusion, confirmed by chest X-ray. The etiology is currently unknown but needs investigation. Given her age and the insidious onset, malignancy is a significant concern.
+
+## Plan
+1.  **Admit to hospital:** For further evaluation and management of the pleural effusion and associated symptoms.
+2.  **Oxygen:** Supplemental oxygen via nasal cannula to maintain SpO2 > 94%.
+3.  **Thoracentesis:** Diagnostic thoracentesis to analyze the pleural fluid (cell count, differential, protein, LDH, glucose, cytology, Gram stain, culture, possibly adenosine deaminase). This will help determine the etiology (transudative vs. exudative, infectious, malignant).
+4.  **CT Chest with contrast:** To further evaluate the pleural effusion, underlying lung parenchyma, mediastinum, and potential primary malignancy or metastatic disease.
+5.  **Consult Pulmonology:** For expert opinion and management of the pleural effusion.
+6.  **Consult Oncology:** If pleural fluid analysis or CT scan suggests malignancy.
+7.  **Labs:** CBC, CMP, LDH, coagulation studies.
+8.  **Monitor:** Vital signs, respiratory status, and symptoms.

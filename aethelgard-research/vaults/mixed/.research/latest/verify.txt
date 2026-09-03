@@ -1,0 +1,1 @@
+✓ Vault derived artifacts and manifests verified.

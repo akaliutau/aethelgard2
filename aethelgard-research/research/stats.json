@@ -1,0 +1,65 @@
+{
+  "age": {
+    "max": 90,
+    "median": 63,
+    "min": 22
+  },
+  "cases": 31,
+  "diagnosis_counts": {
+    "Acute Decompensated Heart Failure": 1,
+    "Atelectasis": 2,
+    "COPD Exacerbation": 1,
+    "COPD Exacerbation with Atelectasis": 1,
+    "Community-Acquired Pneumonia": 1,
+    "Congestive Heart Failure": 3,
+    "Congestive Heart Failure Exacerbation": 2,
+    "Malignant Pleural Effusion (likely metastatic adenocarcinoma)": 2,
+    "Malignant Pleural Effusion with secondary Atelectasis": 1,
+    "Pleural Effusion": 1,
+    "Pneumonia": 2,
+    "Post-obstructive Atelectasis": 1,
+    "Post-obstructive Atelectasis (likely due to mucus plugging secondary to recent URI)": 1,
+    "Pulmonary Embolism": 3,
+    "Right-sided Pleural Effusion (likely exudative, etiology unclear - could be infectious, inflammatory, or malignant)": 1,
+    "Spontaneous Pneumothorax": 8
+  },
+  "mixed_format_counts": {
+    "admission_txt": 11,
+    "hl7": 10,
+    "legacy_txt": 10
+  },
+  "radiographic_label_counts": {
+    "negative": {
+      "Atelectasis": 1,
+      "Cardiomegaly": 6,
+      "Consolidation": 16,
+      "Edema": 7,
+      "Fracture": 3,
+      "Mass": 4,
+      "Pleural Effusion": 17,
+      "Pneumonia": 2,
+      "Pneumothorax": 4,
+      "Pulmonary Edema": 1
+    },
+    "positive": {
+      "Atelectasis": 5,
+      "Bullae": 1,
+      "Cardiomegaly": 2,
+      "Consolidation": 1,
+      "Edema": 1,
+      "Flattened Diaphragms": 1,
+      "Hyperinflation": 1,
+      "Increased AP Diameter": 1,
+      "Infiltrate": 1,
+      "Pleural Effusion": 8,
+      "Pneumothorax": 1
+    },
+    "uncertain/borderline": {
+      "Atelectasis": 1
+    }
+  },
+  "sex_counts": {
+    "Female": 13,
+    "Male": 18
+  }
+}

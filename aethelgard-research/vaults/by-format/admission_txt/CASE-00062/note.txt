@@ -1,0 +1,81 @@
+PATIENT ID: patient00062
+MRN: SYN-FDFB2D6B
+CONTACT: patient.fdfb2d6b@example.test
+
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 66
+**Sex:** Male
+**Date:** 2024-02-29
+
+## History of Present Illness
+
+Mr. Doe is a 66-year-old male with a history of hypertension, hyperlipidemia, and type 2 diabetes mellitus who presents to the emergency department with progressive shortness of breath over the past 3 days. The dyspnea initially occurred with exertion but has worsened to occur even at rest today. He denies chest pain, fever, chills, or productive cough. He reports a dry cough and mild right-sided pleuritic chest discomfort. He denies recent travel, sick contacts, or trauma. He is a former smoker (quit 15 years ago, 20 pack-year history).
+
+## Past Medical History
+
+*   Hypertension
+*   Hyperlipidemia
+*   Type 2 Diabetes Mellitus
+*   Former Smoker (20 pack-years, quit 15 years ago)
+
+## Medications
+
+*   Lisinopril
+*   Atorvastatin
+*   Metformin
+
+## Allergies
+
+*   NKDA
+
+## Social History
+
+*   Former smoker
+*   Denies alcohol or illicit drug use
+
+## Family History
+
+*   Non-contributory
+
+## Review of Systems
+
+*   **Constitutional:** Denies fever, chills, weight loss.
+*   **Respiratory:** Reports progressive shortness of breath, dry cough, mild right-sided pleuritic chest discomfort.
+*   **Cardiovascular:** Denies chest pain, palpitations, edema.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Neurological:** Denies headache, dizziness, weakness, numbness.
+
+## Physical Examination
+
+*   **General:** Alert and oriented, appears mildly distressed due to shortness of breath.
+*   **Vitals:** HR 110 bpm, BP 130/80 mmHg, SpO2 90% on room air, Temp 37.0°C.
+*   **HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD.
+*   **Lungs:** Decreased breath sounds at the right lung base. Dullness to percussion at the right lung base. No wheezes or crackles appreciated elsewhere.
+*   **Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+*   **Neurological:** Grossly intact.
+*   **Skin:** Warm, dry, no rashes or lesions.
+
+## Investigations
+
+*   **Chest X-ray:** Shows right-sided pleural effusion and associated atelectasis in the right lower lobe.
+
+## Assessment
+
+1.  **Right-sided Pleural Effusion with associated Atelectasis:** The patient's symptoms (progressive dyspnea, pleuritic chest pain), physical exam findings (decreased breath sounds, dullness to percussion at the right base), and chest X-ray findings are consistent with a right-sided pleural effusion causing compressive atelectasis. The etiology is unclear at this time but needs further investigation, especially given his age and smoking history, raising concern for malignancy.
+2.  **Hypoxia:** SpO2 of 90% on room air, likely secondary to the pleural effusion and atelectasis.
+3.  **Tachycardia:** HR of 110 bpm, likely compensatory for hypoxia and respiratory distress.
+
+## Plan
+
+1.  **Admit to hospital:** For further evaluation and management of the pleural effusion and associated symptoms.
+2.  **Oxygen therapy:** Initiate supplemental oxygen to maintain SpO2 > 92%.
+3.  **Thoracentesis:** Perform diagnostic thoracentesis to analyze the pleural fluid (cell count, protein, LDH, glucose, cytology, cultures) to determine the etiology of the effusion (transudative vs. exudative, infectious, malignant).
+4.  **CT Chest with contrast:** Order a CT scan of the chest to better characterize the effusion, evaluate for underlying lung pathology (e.g., mass, consolidation), and assess for mediastinal involvement or lymphadenopathy.
+5.  **Consult Pulmonology:** Obtain a pulmonology consultation for management of the pleural effusion and potential need for further procedures (e.g., pleural biopsy, chest tube placement).
+6.  **Labs:** Order comprehensive metabolic panel, complete blood count, coagulation studies, and BNP.
+7.  **ECG:** Obtain an ECG to rule out cardiac causes of dyspnea.
+8.  **Monitor:** Closely monitor vital signs, respiratory status, and oxygen saturation.
+

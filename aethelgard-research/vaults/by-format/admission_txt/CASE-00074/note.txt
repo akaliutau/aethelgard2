@@ -1,0 +1,83 @@
+PATIENT ID: patient00074
+MRN: SYN-C57C42F4
+CONTACT: patient.c57c42f4@example.test
+
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 44
+**Sex:** Male
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+
+Shortness of breath, cough, and right-sided chest pain.
+
+## History of Present Illness (HPI)
+
+Mr. Doe is a 44-year-old male presenting with a 3-day history of worsening cough, shortness of breath, and pleuritic chest pain localized to the right side. He describes the cough as initially dry but now productive of yellowish sputum. He reports associated low-grade fever (measured at home up to 101°F) and chills for the past 2 days. Symptoms began insidiously but have progressively worsened, particularly over the last 24 hours, leading to significant dyspnea even at rest. He denies hemoptysis, recent travel, sick contacts, or known TB exposure. He denies recent trauma.
+
+## Past Medical History (PMH)
+
+Hypertension (well-controlled on lisinopril).
+
+## Social History
+
+Non-smoker, denies illicit drug use, occasional alcohol consumption.
+
+## Allergies
+
+NKDA (No Known Drug Allergies).
+
+## Medications
+
+Lisinopril 10mg daily.
+
+## Review of Systems (ROS)
+
+*   **Constitutional:** Fever, chills, malaise.
+*   **Respiratory:** Cough (productive), shortness of breath, pleuritic chest pain.
+*   **Cardiovascular:** Denies chest pain (other than pleuritic), palpitations, edema.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Genitourinary:** Denies dysuria, frequency, urgency.
+*   **Neurological:** Denies headache, dizziness, focal weakness.
+
+## Physical Examination
+
+*   **General:** Appears moderately distressed, sitting upright, using accessory muscles to breathe.
+*   **Vitals:** HR 115 bpm, BP 110/70 mmHg, SpO2 90% on room air, Temp 38.5°C (101.3°F).
+*   **HEENT:** Normocephalic, atraumatic. Mucous membranes slightly dry. Pharynx clear.
+*   **Neck:** Supple, no lymphadenopathy or meningismus.
+*   **Lungs:** Auscultation reveals decreased breath sounds and bronchial breath sounds over the right lower lobe. Crackles are present in the right lower lobe. Egophony is noted over the right lower lobe. Left lung is clear to auscultation.
+*   **Cardiovascular:** Tachycardic, regular rhythm. No murmurs, rubs, or gallops. No peripheral edema.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+*   **Skin:** Warm, dry, no rashes or lesions noted.
+*   **Neurological:** Alert and oriented x3. Gross motor and sensory function intact.
+
+## Investigations
+
+*   **Chest X-ray (CXR):** Shows consolidation in the right lower lobe.
+*   **CBC:** Pending.
+*   **BMP:** Pending.
+*   **Influenza/COVID PCR:** Pending.
+*   **Blood Cultures:** Pending.
+*   **Sputum Gram Stain and Culture:** Pending.
+
+## Assessment
+
+1.  **Community-Acquired Pneumonia (CAP), likely bacterial:** Based on the clinical presentation (fever, chills, productive cough, pleuritic chest pain, shortness of breath), physical exam findings (tachypnea, tachycardia, hypoxia, decreased breath sounds, crackles, egophony in the right lower lobe), and radiographic evidence of consolidation in the right lower lobe.
+
+## Plan
+
+1.  **Admit to inpatient medical service:** Due to hypoxia (SpO2 90% on RA), tachycardia (HR 115), fever, and radiographic evidence of pneumonia.
+2.  **Oxygen therapy:** Initiate supplemental oxygen via nasal cannula to maintain SpO2 > 92%.
+3.  **IV fluids:** Start IV fluids (e.g., Normal Saline) for hydration.
+4.  **Antibiotics:** Initiate empiric antibiotic therapy for CAP. Given the likely bacterial etiology and severity, start with a combination regimen covering typical and atypical pathogens (e.g., Ceftriaxone + Azithromycin or Levofloxacin).
+5.  **Labs:** Monitor CBC, BMP, inflammatory markers (CRP, ESR), and blood cultures.
+6.  **Respiratory support:** Monitor respiratory status closely. Consider non-invasive ventilation (NIV) or intubation if respiratory distress worsens or hypoxia persists despite oxygen therapy.
+7.  **Pain control:** Administer analgesics (e.g., acetaminophen or NSAIDs) for fever and pleuritic chest pain.
+8.  **Sputum culture:** Obtain sputum sample for Gram stain and culture to guide antibiotic therapy.
+9.  **Influenza/COVID testing:** Await results to guide isolation precautions and potential antiviral therapy.
+10. **Monitor:** Frequent vital sign monitoring, respiratory assessment, and oxygen saturation monitoring.
+

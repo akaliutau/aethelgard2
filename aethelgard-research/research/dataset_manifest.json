@@ -1,0 +1,293 @@
+{
+  "cases": [
+    {
+      "case_id": "CASE-00002",
+      "ground_truth": "research/ground_truth/CASE-00002.json",
+      "image_reference": "patient00002_study2_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00002"
+    },
+    {
+      "case_id": "CASE-00008",
+      "ground_truth": "research/ground_truth/CASE-00008.json",
+      "image_reference": "patient00008_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00008"
+    },
+    {
+      "case_id": "CASE-00011",
+      "ground_truth": "research/ground_truth/CASE-00011.json",
+      "image_reference": "patient00011_study13_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00011"
+    },
+    {
+      "case_id": "CASE-00012",
+      "ground_truth": "research/ground_truth/CASE-00012.json",
+      "image_reference": "patient00012_study3_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00012"
+    },
+    {
+      "case_id": "CASE-00018",
+      "ground_truth": "research/ground_truth/CASE-00018.json",
+      "image_reference": "patient00018_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00018"
+    },
+    {
+      "case_id": "CASE-00021",
+      "ground_truth": "research/ground_truth/CASE-00021.json",
+      "image_reference": "patient00021_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00021"
+    },
+    {
+      "case_id": "CASE-00022",
+      "ground_truth": "research/ground_truth/CASE-00022.json",
+      "image_reference": "patient00022_study2_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00022"
+    },
+    {
+      "case_id": "CASE-00024",
+      "ground_truth": "research/ground_truth/CASE-00024.json",
+      "image_reference": "patient00024_study2_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00024"
+    },
+    {
+      "case_id": "CASE-00027",
+      "ground_truth": "research/ground_truth/CASE-00027.json",
+      "image_reference": "patient00027_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00027"
+    },
+    {
+      "case_id": "CASE-00029",
+      "ground_truth": "research/ground_truth/CASE-00029.json",
+      "image_reference": "patient00029_study1_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00029"
+    },
+    {
+      "case_id": "CASE-00032",
+      "ground_truth": "research/ground_truth/CASE-00032.json",
+      "image_reference": "patient00032_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00032"
+    },
+    {
+      "case_id": "CASE-00036",
+      "ground_truth": "research/ground_truth/CASE-00036.json",
+      "image_reference": "patient00036_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00036"
+    },
+    {
+      "case_id": "CASE-00037",
+      "ground_truth": "research/ground_truth/CASE-00037.json",
+      "image_reference": "patient00037_study1_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00037"
+    },
+    {
+      "case_id": "CASE-00038",
+      "ground_truth": "research/ground_truth/CASE-00038.json",
+      "image_reference": "patient00038_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00038"
+    },
+    {
+      "case_id": "CASE-00039",
+      "ground_truth": "research/ground_truth/CASE-00039.json",
+      "image_reference": "patient00039_study8_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00039"
+    },
+    {
+      "case_id": "CASE-00044",
+      "ground_truth": "research/ground_truth/CASE-00044.json",
+      "image_reference": "patient00044_study7_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00044"
+    },
+    {
+      "case_id": "CASE-00046",
+      "ground_truth": "research/ground_truth/CASE-00046.json",
+      "image_reference": "patient00046_study3_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00046"
+    },
+    {
+      "case_id": "CASE-00051",
+      "ground_truth": "research/ground_truth/CASE-00051.json",
+      "image_reference": "patient00051_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00051"
+    },
+    {
+      "case_id": "CASE-00053",
+      "ground_truth": "research/ground_truth/CASE-00053.json",
+      "image_reference": "patient00053_study1_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00053"
+    },
+    {
+      "case_id": "CASE-00056",
+      "ground_truth": "research/ground_truth/CASE-00056.json",
+      "image_reference": "patient00056_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00056"
+    },
+    {
+      "case_id": "CASE-00062",
+      "ground_truth": "research/ground_truth/CASE-00062.json",
+      "image_reference": "patient00062_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00062"
+    },
+    {
+      "case_id": "CASE-00065",
+      "ground_truth": "research/ground_truth/CASE-00065.json",
+      "image_reference": "patient00065_study2_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00065"
+    },
+    {
+      "case_id": "CASE-00066",
+      "ground_truth": "research/ground_truth/CASE-00066.json",
+      "image_reference": "patient00066_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00066"
+    },
+    {
+      "case_id": "CASE-00068",
+      "ground_truth": "research/ground_truth/CASE-00068.json",
+      "image_reference": "patient00068_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00068"
+    },
+    {
+      "case_id": "CASE-00070",
+      "ground_truth": "research/ground_truth/CASE-00070.json",
+      "image_reference": "patient00070_study1_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00070"
+    },
+    {
+      "case_id": "CASE-00071",
+      "ground_truth": "research/ground_truth/CASE-00071.json",
+      "image_reference": "patient00071_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00071"
+    },
+    {
+      "case_id": "CASE-00074",
+      "ground_truth": "research/ground_truth/CASE-00074.json",
+      "image_reference": "patient00074_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00074"
+    },
+    {
+      "case_id": "CASE-00076",
+      "ground_truth": "research/ground_truth/CASE-00076.json",
+      "image_reference": "patient00076_study1_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00076"
+    },
+    {
+      "case_id": "CASE-00077",
+      "ground_truth": "research/ground_truth/CASE-00077.json",
+      "image_reference": "patient00077_study1_view1_frontal.jpg",
+      "mixed_format": "legacy_txt",
+      "patient_id": "patient00077"
+    },
+    {
+      "case_id": "CASE-00079",
+      "ground_truth": "research/ground_truth/CASE-00079.json",
+      "image_reference": "patient00079_study1_view1_frontal.jpg",
+      "mixed_format": "hl7",
+      "patient_id": "patient00079"
+    },
+    {
+      "case_id": "CASE-00080",
+      "ground_truth": "research/ground_truth/CASE-00080.json",
+      "image_reference": "patient00080_study7_view1_frontal.jpg",
+      "mixed_format": "admission_txt",
+      "patient_id": "patient00080"
+    }
+  ],
+  "format": "aethelgard-research-dataset/1",
+  "formats": [
+    "admission_txt",
+    "legacy_txt",
+    "hl7"
+  ],
+  "input": "/media/DATA/repos-my/aethelgard-vault/dataset/Hospital_A",
+  "stats": {
+    "age": {
+      "max": 90,
+      "median": 63,
+      "min": 22
+    },
+    "cases": 31,
+    "diagnosis_counts": {
+      "Acute Decompensated Heart Failure": 1,
+      "Atelectasis": 2,
+      "COPD Exacerbation": 1,
+      "COPD Exacerbation with Atelectasis": 1,
+      "Community-Acquired Pneumonia": 1,
+      "Congestive Heart Failure": 3,
+      "Congestive Heart Failure Exacerbation": 2,
+      "Malignant Pleural Effusion (likely metastatic adenocarcinoma)": 2,
+      "Malignant Pleural Effusion with secondary Atelectasis": 1,
+      "Pleural Effusion": 1,
+      "Pneumonia": 2,
+      "Post-obstructive Atelectasis": 1,
+      "Post-obstructive Atelectasis (likely due to mucus plugging secondary to recent URI)": 1,
+      "Pulmonary Embolism": 3,
+      "Right-sided Pleural Effusion (likely exudative, etiology unclear - could be infectious, inflammatory, or malignant)": 1,
+      "Spontaneous Pneumothorax": 8
+    },
+    "mixed_format_counts": {
+      "admission_txt": 11,
+      "hl7": 10,
+      "legacy_txt": 10
+    },
+    "radiographic_label_counts": {
+      "negative": {
+        "Atelectasis": 1,
+        "Cardiomegaly": 6,
+        "Consolidation": 16,
+        "Edema": 7,
+        "Fracture": 3,
+        "Mass": 4,
+        "Pleural Effusion": 17,
+        "Pneumonia": 2,
+        "Pneumothorax": 4,
+        "Pulmonary Edema": 1
+      },
+      "positive": {
+        "Atelectasis": 5,
+        "Bullae": 1,
+        "Cardiomegaly": 2,
+        "Consolidation": 1,
+        "Edema": 1,
+        "Flattened Diaphragms": 1,
+        "Hyperinflation": 1,
+        "Increased AP Diameter": 1,
+        "Infiltrate": 1,
+        "Pleural Effusion": 8,
+        "Pneumothorax": 1
+      },
+      "uncertain/borderline": {
+        "Atelectasis": 1
+      }
+    },
+    "sex_counts": {
+      "Female": 13,
+      "Male": 18
+    }
+  }
+}

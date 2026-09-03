@@ -184,7 +184,7 @@ def prepare_dataset(input_path: Path, output: Path, *, images_root: Path | None 
         patient_id = str(record['patient_id'])
         canaries = _canaries(patient_id)
         image = _resolve_image(record, json_file, images_root)
-        image_name = 'chest' + image.suffix.lower()
+        image_name = image.name
         source_sha = hashlib.sha256(json.dumps(record, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
         age = (record.get('demographics') or {}).get('age')
@@ -209,7 +209,8 @@ def prepare_dataset(input_path: Path, output: Path, *, images_root: Path | None 
             'radiographic_labels': record['radiographic_labels'],
             'hidden_diagnosis_label': record['hidden_diagnosis_label'],
             'privacy_canaries': canaries,
-            'image_reference': record['image_reference'],
+            'image_reference': image_name,
+            'source_image_reference': record['image_reference'],
             'source_record_sha256': source_sha,
         }
         (output / 'research' / 'ground_truth' / f'{case_id}.json').write_text(
@@ -224,7 +225,7 @@ def prepare_dataset(input_path: Path, output: Path, *, images_root: Path | None 
             'case_id': case_id,
             'patient_id': patient_id,
             'mixed_format': mixed_format,
-            'image': image_name,
+            'image_reference': image_name,
             'ground_truth': f'research/ground_truth/{case_id}.json',
         }
         manifest['cases'].append(case_entry)
@@ -272,7 +273,7 @@ def prepare_dataset(input_path: Path, output: Path, *, images_root: Path | None 
 def main() -> None:
     parser = argparse.ArgumentParser(description='Convert fixed-schema synthetic multimodal JSON into Aethelgard demo/research corpora.')
     parser.add_argument('input', type=Path, help='JSON file or directory containing generated JSON records')
-    parser.add_argument('-o', '--output', type=Path, default=Path('research-dataset'))
+    parser.add_argument('-o', '--output', type=Path, default=Path('aethelgard-research'))
     parser.add_argument('--images-root', type=Path, help='Optional root used to resolve image_reference values')
     parser.add_argument('--formats', nargs='+', choices=FORMATS, default=list(FORMATS))
     parser.add_argument('--force', action='store_true', help='Replace the output directory if it already exists')

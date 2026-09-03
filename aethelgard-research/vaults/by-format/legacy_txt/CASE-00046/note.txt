@@ -1,0 +1,84 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00046
+MRN=SYN-5FB714A2
+EMAIL=patient.5fb714a2@example.test
+AGE=90
+SEX=Female
+HR=110
+BP=110/70 mmHg
+SpO2=90
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 90-year-old female presenting with progressive shortness of breath over the past week, initially exertional but now present at rest. She reports a non-productive cough and denies fever, chills, or chest pain. She has a history of hypertension, osteoarthritis, and atrial fibrillation (on warfarin). She lives at home with assistance and has noticed some mild lower extremity edema recently. She denies recent travel, sick contacts, or trauma. Her medications include lisinopril, warfarin, acetaminophen, and a daily multivitamin.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 90
+**Sex:** Female
+**Date:** 2024-02-29
+
+## Chief Complaint
+Progressive shortness of breath.
+
+## History of Present Illness
+Ms. Doe is a 90-year-old female with a history of hypertension, osteoarthritis, and atrial fibrillation presenting with worsening shortness of breath over the past week. The dyspnea initially occurred with exertion but has progressed to occur even at rest. She also reports a non-productive cough. She denies fever, chills, chest pain, orthopnea, or paroxysmal nocturnal dyspnea. She has noticed some mild swelling in her ankles recently.
+
+## Past Medical History
+- Hypertension
+- Osteoarthritis
+- Atrial Fibrillation (on warfarin)
+
+## Medications
+- Lisinopril
+- Warfarin
+- Acetaminophen
+- Multivitamin
+
+## Allergies
+NKDA
+
+## Social History
+Lives at home with assistance. Non-smoker. Denies alcohol or illicit drug use.
+
+## Family History
+Non-contributory.
+
+## Review of Systems
+- **Constitutional:** Denies fever, chills, weight loss.
+- **Cardiovascular:** Denies chest pain. Reports lower extremity edema.
+- **Respiratory:** Reports progressive shortness of breath and non-productive cough.
+- **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+- **Neurological:** Denies headache, dizziness, focal weakness.
+
+## Physical Examination
+**General:** Elderly female, appears mildly distressed due to shortness of breath.
+**Vitals:** HR 110 bpm, BP 110/70 mmHg, SpO2 90% on room air, Temp 37.0°C.
+**HEENT:** Normocephalic, atraumatic. Mucous membranes slightly dry. JVP elevated.
+**Lungs:** Auscultation reveals bilateral crackles, predominantly at the bases. Decreased breath sounds at the right base.
+**Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops appreciated. Peripheral edema (1+ bilaterally).
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+**Neurological:** Alert and oriented x3. Grossly intact motor and sensory function.
+
+## Investigations
+- Chest X-ray: Shows a moderate right-sided pleural effusion. No evidence of cardiomegaly or pulmonary edema.
+- EKG: Shows atrial fibrillation with a rapid ventricular response.
+- Labs: Pending (CBC, BMP, BNP, Troponin, Coagulation studies).
+
+## Assessment
+1.  **Acute dyspnea likely secondary to right-sided pleural effusion.** The effusion is likely contributing significantly to her respiratory distress and hypoxemia. The etiology of the effusion is unclear but could be related to congestive heart failure (CHF), malignancy, infection (though she denies fever), or other causes.
+2.  **Possible underlying Congestive Heart Failure (CHF) exacerbation.** History of atrial fibrillation and hypertension are risk factors. Recent onset of lower extremity edema and elevated JVP support this possibility, although the CXR does not show cardiomegaly or overt pulmonary edema. The pleural effusion could be a manifestation of CHF.
+3.  **Atrial fibrillation with rapid ventricular response.** Contributing to symptoms and potentially worsening cardiac function.
+
+## Plan
+1.  **Admit to hospital for further evaluation and management.**
+2.  **Oxygen therapy:** Initiate supplemental oxygen to maintain SpO2 > 92%.
+3.  **Cardiac monitoring:** Continuous EKG monitoring due to atrial fibrillation with RVR.
+4.  **Fluid management:** Restrict fluids and administer intravenous diuretics (e.g., furosemide) to address potential volume overload and pleural effusion.
+5.  **Thoracentesis:** Consider diagnostic and potentially therapeutic thoracentesis of the right pleural effusion to determine etiology (transudate vs. exudate) and relieve respiratory symptoms.
+6.  **Rate control:** Initiate or adjust rate control medication for atrial fibrillation (e.g., metoprolol, diltiazem) if not already optimized.
+7.  **Further investigations:** Obtain pending labs (CBC, BMP, BNP, Troponin, Coagulation studies). Consider echocardiogram to assess cardiac function and rule out structural heart disease.
+8.  **Consult Cardiology:** Consult cardiology for management of atrial fibrillation and potential underlying heart failure.
+9.  **Consult Pulmonology:** Consult pulmonology if the etiology of the pleural effusion remains unclear after initial workup or if there are concerns for malignancy or infection.

@@ -1,294 +1,245 @@
-# Aethelgard Vault
+# 🛡️ Aethelgard 2.0
 
-**Semantic Git for heterogeneous medical documents.**
+<p align="left">
+  <img alt="Status" src="https://img.shields.io/badge/status-research--prototype-orange">
+  <img alt="Core" src="https://img.shields.io/badge/core-semantic--vault-blue">
+  <img alt="Execution" src="https://img.shields.io/badge/execution-local%20%7C%20cloud-green">
+  <img alt="Search" src="https://img.shields.io/badge/search-multimodal-purple">
+</p>
 
-Aethelgard turns an ordinary folder of medical evidence into a local, reproducible semantic vault. Drop in free-text EHR exports, PDFs, JSON/CSV/HL7-like text and medical images; Aethelgard discovers changes, groups artifacts into cases, uses a pluggable extractor to produce flexible clinical evidence, applies deterministic privacy policy, materializes optional multimodal embeddings, and versions the complete semantic state.
+**Semantic Search Engine for Multimodal Medical Documents.**
+<p align="center">
+<img src="docs/assets/logo_aethelgard.png" width="55%" alt="Aethelgard hero picture" />
+</p>
 
-This version deliberately contains **no peer network, Pub/Sub federation, global query routing or orchestrator**. It does include a local search/protection layer that consumes committed vault artifacts. Networking remains a future access/transport layer. The vault is intended to remain useful and testable by itself, like Git remains useful without GitHub.
+### About
 
-## The data flow
+**Aethelgard** is a lightweight, pure-pull Federated Retrieval-Augmented Generation (FedRAG) framework. 
+
+It was created to query highly sensitive, distributed vector databases (like clinical patient data) without actually moving 
+raw data or opening inbound corporate firewalls.
+If deployed, Aethelgard could eliminate millions of years of diagnostic waiting time without requiring a single Data Use Agreement (DUA), 
+creating a scalable infrastructure for global clinical knowledge exchange
+
+The core idea of Aethelgard is the concept of _Smart Folder_, with allows to turn the directory with collections of medical notes, files, 
+and images into a semantic vault. It detects semantic changes, extracts structured clinical evidence, applies protection policy, creates multimodal
+representations, records provenance, and commits the result as a semantic revision. Ir resembles the git, but focuses on automatically generating 
+the safe semantic representation of undelaying data, which can be shared with peers.
+
+Each Smart Folder, when coupled with network interface, becomes a node in a distributed network, that allow to share knowledge.
+
+### 🌌 The Vision
+
+Solving the rare disease "Diagnostic Odyssey" requires more than a single application; it requires a paradigm shift in how 
+clinical systems communicate. Healthcare is notoriously fragmented. Every hospital has a unique IT infrastructure, 
+differing firewall policies, and strict, incompatible data governance laws (HIPAA, GDPR, etc.).
+
+What we propose is the architecture of distributed peer-2-peer network that could allow clinicians to organize a virtual 
+consensus regarding difficult diagnosis, querying thousands of similar cases spread across 100s of institutions, harnessing the 
+whole knowledge in the world, and enormously increasing/empowering the diagnostic power of isolated doctor.
+
+
+**We did not build an app. We built a protocol.**
+
+Aethelgard is designed as a foundational **Federated Retrieval-Augmented Generation (FedRAG) Framework**. 
+
+We engineered Aethelgard to act as the decentralized nervous system for clinical intelligence:
+* **Agnostic to the UI:** Whether a hospital uses Epic, Cerner, or a custom legacy Electronic Health Record (EHR) system, 
+  Aethelgard operates at the infrastructure layer, allowing local apps to hook into the global network seamlessly.
+* **Adaptable to any IT Environment:** Built on strict Hexagonal Architecture, the core geometric and AI logic is completely 
+  decoupled from the transport layer. Each layer can be  
+* **Beyond Diagnostics:** While our primary demonstration focuses on rare disease diagnostics, the Aethelgard protocol can be 
+  instantly adapted for pharmacovigilance (detecting rare adverse drug reactions globally), multi-center clinical trial matching, 
+  and real-time epidemiological tracking, or used as an oracle in distributed training of models, effectively playing the role of  
+  human expert in RLHF approach - all without moving a single row of raw data.
+
+
+### 🏗️ Architecture 
+
+The core concept of Smart Folder
+The lowest level and the central idea is the concept of Smart Folder. 
+
+<p align="center">
+<img src="docs/assets/Diagram_2.png" width="75%" alt="Smart Folder" />
+
+<em>Figure 2: Smart Folder handles the lowest level of processing, and is the closest level to the documents.</em>
+</p>
+
+Smart Folder has a pluggable design. The current stack uses **Qwen3-4B-Instruct-2507** for evidence extraction, 
+**EmbeddingGemma-300m** for clinical text, and **MedSigLIP-448** for medical images. 
+Each component sits behind a replaceable interface. 
+We were inspired by object-based of version control like `git`, and implemented something very similar.
+
 
 ```text
-working folder / cloud folder
-        │
-        ▼
-     DISCOVER
-        │ content hashes
-        ▼
-      GROUP
-        │ case bundles
-        ▼
-       READ
-        │ text + image parts
-        ▼
- AI EVIDENCE EXTRACTOR
- Qwen3-4B + constrained JSON by default
-        │ atomic facts → arbitrary nested JSON dictionary
-        ▼
- DETERMINISTIC PRIVACY POLICY
-        │
-        ├──────────────► evidence.json
-        │
-        ▼
-   MATERIALIZERS
-        │
-        ├── EmbeddingGemma → clinical text vector
-        ├── EmbeddingGemma → evidence-fact vectors
-        ├── MedSigLIP      → medical image vector
-        └── weighted stack → multimodal vector
-        │
-        ▼
- SEMANTIC REVISION
- .aethelgard/derived/...
-        │
-        ├──────────────► aethelgard search
-        │
-        └──────────────► aethelgard protect
+medical documents
+  → semantic evidence
+  → deterministic privacy boundary
+  → multimodal representations
+  → reproducible revision
+  → local search / protected-query experiments
 ```
 
-A case in the demo is intentionally simple:
+
+<p align="center">
+<img src="docs/assets/Diagram_3.png" width="75%" alt="Architecture of Aethelgard" />
+
+<em>Figure 3: System Design of our protocol. Super-link is built on the basis of message queue. 
+  For each component we have a pre-defined interface in our framework</em>
+</p>
+
+### 🏗️ How It Works (The Pure-Pull Workflow)
+
+1. **Broadcast:** The global orchestrator drops a vectorized query into a secure mailbox (Broker).
+2. **Pull:** The client node (behind a strict hospital firewall) wakes up on its 10-second heartbeat and asks, *"Do I have any mail?"*
+3. **Local RAG:** Each Node gets the query and searches the closest vector locally.
+4. **Upload:** The client pushes the safe insight back to the orchestrator (super-link on the diagram).
+
+
+### 🧮 Security Innovation: Empirical Noise vs. LDP
+
+The most significant technical hurdle in Federated RAG is ensuring that transmitted semantic vectors cannot be reverse-engineered 
+to reveal patient Protected Health Information (PHI). 
+
+Our empirical evaluation of 1920-dimensional clinical vectors revealed that strict Local Differential Privacy (LDP) is 
+mathematically incompatible with exact Top-1 retrieval utility in high-dimensional spaces. 
+Applying standard LDP collapsed Top-1 retrieval accuracy to under 10%. 
+
+To resolve this, Aethelgard utilizes an **Empirical Noise Strategy**. 
+By applying a controlled Gaussian noise ($\sigma=0.2$) directly to the vectors, we degrade the raw vector similarity to 0.116 
+(rendering exact inversion mathematically impossible) while perfectly preserving the relative spatial geometry. 
+
+> Aethelgard exploits an asymmetry between reconstruction and retrieval. 
+> Reconstruction benefits from the exact embedding; retrieval only needs enough relative similarity to identify nearby cases. 
+> By perturbing the vector, we can substantially damage its absolute representation while retaining enough of the original similarity signal 
+> for useful nearest-neighbor ranking.
+
+
+### 🧮 Research
+
+the goal of the research was to prove our core idea:
+
+> Distort the representation, preserve the signal
+
+Aethelgard does not need a protected vector to resemble the original vector. It only needs clinically similar cases to remain more similar 
+than unrelated cases.
+
+1. The first research question was to investigate in details the reverse vector attack and to determine the cure.
+
+<p align="center">
+<img src="docs/assets/Diagram_4.png" width="75%" alt="Empirical noise analysis" />
+
+<em>Figure 4: How much noise is too much, how to choose the sweet spot?</em>
+</p>
+
+👉 **[Privacy-Utility Trade-off Analysis](docs/LDP_and_Empirical_Noise_Parameter_Selection_Analysis.ipynb)** 
+👉 **[Paper Draft](https://github.com/akaliutau/aethelgard2/raw/main/docs/Privacy_Utility_Tradeoff_Analysis.pdf)** 
+
+2. The second question is to validate the reliability and usefulness of search engine with heavy data obfuscation and vector noise.
+
+We created a vault consisting of 31 records and initialize a SmartFloder with all embeddings and pre-processing.
+
+We found the useful operating region: the vector can be heavily perturbed before retrieval ranking collapses. 
+In the current 31-case PoC, protected queries preserved the clean Top-1 result in 93.8% of queries.
+
+
+| Metric                              | Value  |
+|-------------------------------------|--------|
+| cases                               | 31/31  |
+| processing success                  | 100.0% |
+| median pipeline latency /inference/ | 106.9s |
+| p95 pipeline  latency /inference/   | 171.3s |
+| known-field accuracy                | 66.4%  |
+| safe cases no canary                | 100.0% |
+| mean Recall@5                       | 65.4%  |
+| mean MRR                            | 0.499  |
+| protected top-1 keep                | 93.8%  |
+| protected top-k ovlp                | 93.8%  |
+| vault verify                        | OK     |
+
+More details and about how to reproduce results are in [research](docs/RESEARCH.md) section.
+
+## 📂 Project Structure
 
 ```text
-demo/
-├── CASE-001/
-│   ├── note.txt      # simulation of PDF→text / EHR text dump
-│   └── chest.jpg
-└── CASE-002/
-    ├── note.txt
-    └── chest.jpg
+aethelgard/
+├── aethelgard/                 # Core package + CLI + pipeline + adapters
+├── demo/                       # One-record toy vault
+├── deploy/cloudrun/            # Cloud Run worker image
+├── scripts/                    # Deploy / cache / warm-up helpers
+├── utils/                      # Dataset + research runners
+├── notebooks/                  # Privacy/utility experiments
+├── docs/                       # Short technical docs
+├── tests/
+└── pyproject.toml
 ```
-
-The evidence itself has **no rigid clinical schema**. One extractor may emit:
-
-```json
-{
-  "presentation": {
-    "symptoms": ["acute dyspnea", "pleuritic chest pain"],
-    "oxygen_saturation": 87
-  },
-  "radiology": {
-    "finding": "right-sided pneumothorax"
-  },
-  "interventions": [
-    {"procedure": "tube thoracostomy", "response": "rapid improvement"}
-  ]
-}
-```
-
-Another hospital-specific plugin may use completely different keys. Only the Aethelgard envelopes/manifests are rigid.
 
 ---
 
-## Install
-
-For the complete local AI pipeline:
+## 🚀 Setup
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e ".[models,pdf]"
-```
+git clone https://github.com/akaliutau/aethelgard2.git
+cd aethelgard2
 
-For cloud-assisted execution as well:
+conda create -n a2 python=3.12 -y
+conda activate a2
 
-```bash
 pip install -e ".[all]"
+aethelgard --help
 ```
 
-The lightweight core deliberately does not require Torch. Commands such as `status`, `show`, `diff`, `log` and `verify` do not load model weights.
+For a **local model run**, HuggingFace token must be set. 
+NOTE: this project is using gated models, so you have to accept access to the configured Google checkpoints and set:
+
+```bash
+export HF_TOKEN="hf_..."
+```
+
+If already deployed remote worker is used, then this does not need a local Hugging Face token.
 
 ---
 
-## Hugging Face model access and `GatedRepoError: 401`
+## 🧪 Run the One-Record Demo
 
-The default extractor is now public and does **not** require gated-model approval:
-
-- `Qwen/Qwen3-4B` — evidence extraction with constrained structured generation
-
-The default multimodal materializers still use Google checkpoints:
-
-- `google/embeddinggemma-300m` — clinical-text embeddings
-- `google/medsiglip-448` — medical image embeddings
-
-The Google checkpoints require accepting their corresponding terms on Hugging Face before the files can be downloaded. A token by itself is **not enough until the model terms have been accepted by that Hugging Face account**.
-
-If you see an error such as:
-
-```text
-huggingface_hub.errors.GatedRepoError: 401 Client Error
-Cannot access gated repo ... google/embeddinggemma-300m ...
-```
-
-### 1. Log into Hugging Face and accept access
-
-Open these while logged into the account that owns your token:
-
-```text
-https://huggingface.co/google/embeddinggemma-300m
-https://huggingface.co/google/medsiglip-448
-```
-
-Review and accept the requested terms for each model you intend to run.
-
-### 2. Create a Hugging Face read token
-
-Create a token in Hugging Face settings, then export it:
+Create a clean copy:
 
 ```bash
-export HF_TOKEN='hf_...'
-```
+cd demo
 
-Aethelgard loads `.env` automatically, so this also works:
-
-```bash
-cp .env.example .env
-# edit .env and set HF_TOKEN=hf_...
-```
-
-Never commit `.env` or the token.
-
-### 3. Optional: save the token using the current Hugging Face CLI
-
-```bash
-hf auth login --token "$HF_TOKEN"
-hf auth whoami
-```
-
-`HF_TOKEN` has priority over a token saved in the local Hugging Face cache, so it is the recommended mechanism for Docker/Cloud Run and reproducible environments.
-
-### 4. Retry
-
-```bash
-aethelgard run
-```
-
-If one model still returns 401, open that **specific** model page and verify that its terms were accepted by the same account associated with `HF_TOKEN`.
-
----
-
-# Git-like workflow
-
-## 1. Initialize a vault
-
-Copy the example data somewhere writable:
-
-```bash
-cp -R demo /tmp/my-med-vault
-cd /tmp/my-med-vault
-```
-
-Initialize the full model profile:
-
-```bash
 aethelgard init
-```
-
-This creates only local metadata:
-
-```text
-.aethelgard/
-├── config.toml
-├── state.db
-└── derived/
-```
-
-The directory is created with private filesystem permissions where supported.
-
-For a zero-model architecture smoke test:
-
-```bash
-aethelgard init --profile smoke
-```
-
-`smoke` explicitly selects a deterministic regex extractor and disables embeddings; it is not an automatic fallback.
-
-## 2. Inspect semantic status
-
-```bash
 aethelgard status
 ```
 
-Example:
+Expected:
 
 ```text
-+  CASE-001   new case
-+  CASE-002   new case
-
-2 case(s) require processing; 0 clean.
+1 case requires processing
 ```
 
-## 3. Process all dirty cases
+### Local (can run on any machine, both CPU/GPU, but the latter helps much faster processing)
 
 ```bash
 aethelgard run
 ```
 
-A full run performs:
+The first run loads Qwen, EmbeddingGemma, and MedSigLIP locally, so that cold run can take time (5-7 min).
+Subsequent runs usually require 1-2 min to finish.
 
-1. free-text/image parsing;
-2. Qwen3-4B evidence extraction with constrained JSON generation;
-3. deterministic privacy validation/redaction;
-4. EmbeddingGemma text embedding;
-5. MedSigLIP image embedding;
-6. normalized weighted multimodal stacking;
-7. immutable semantic materialization;
-8. semantic revision commit.
-
-You can process one case:
+### Remote GPU
 
 ```bash
-aethelgard run CASE-001
+export WORKER_URL="https://aethelgard-vault-worker-ud4oy3q2sq-uc.a.run.app"
+aethelgard run --remote "$WORKER_URL"
 ```
 
-## 4. Inspect exactly what AI extracted
-
-```bash
-aethelgard show CASE-001
-```
-
-This displays the privacy-reviewed evidence dictionary.
-
-To inspect the model output *before* deterministic privacy filtering:
-
-```bash
-aethelgard show CASE-001 --view raw
-```
-
-Other useful views:
-
-```bash
-aethelgard show CASE-001 --view provenance
-aethelgard show CASE-001 --view privac
-aethelgard show CASE-001 --view derived
-aethelgard show CASE-001 --view manifest
-```
-
-This is one of the intended competition demos: judges can literally inspect the local free-text record and then inspect the semantic representation produced from it.
-
-## 5. Change a record
-
-Edit `CASE-001/note.txt`, then:
-
-```bash
-aethelgard status
-```
-
-Aethelgard reports:
+Expected shape:
 
 ```text
-M  CASE-001   source changed
+Processing 1 case(s) ...
+✓ CASE-00002  extractor=...  redactions=...  109496 ms
+revision 585a98639d2e
 ```
-
-Run it again and inspect how evidence changed:
-
-```bash
-aethelgard run CASE-001
-aethelgard diff CASE-001
-```
-
-## 6. Change the semantic processor
-
-Edit `.aethelgard/config.toml`, for example changing the extraction checkpoint or embedding profile, without touching the source documents.
 
 Then:
 
@@ -296,481 +247,155 @@ Then:
 aethelgard status
 ```
 
-The case becomes dirty because its **semantic processor changed**, even though the source bytes are identical.
+Expected:
 
-This is the defining SmartFolder behavior: Aethelgard tracks the semantic build state, not merely modification times.
-
-## 7. Revision history and integrity
-
-```bash
-aethelgard log
-aethelgard verify
+```text
+0 case(s) require processing; 1 clean.
 ```
-
-`verify` checks the hashes of every currently materialized derived artifact against its manifest.
 
 ---
 
-# Semantic fingerprint
+## 🔎 Inspect What Aethelgard Built
 
-The current semantic identity of a case depends on:
-
-```text
-source content hashes
-+ reader versions
-+ case resolver version
-+ evidence extractor/model fingerprint
-+ deterministic privacy-policy fingerprint
-+ materializer/encoder fingerprints
-+ multimodal fusion parameters
+```bash
+aethelgard show CASE-00002
+aethelgard show CASE-00002 --view provenance
+aethelgard verify
+aethelgard log
 ```
-
-Changing any of these causes a semantic rebuild.
 
 Derived artifacts are stored under:
 
 ```text
-.aethelgard/derived/<CASE>/<semantic-fingerprint-prefix>/
+.aethelgard/derived/CASE-00002/<semantic-fingerprint>/
 ```
 
-Typical full-profile output:
-
-```text
-evidence.raw.json
-evidence.json
-provenance.json
-privacy.json
-embeddings.npz
-embeddings.json
-manifest.json
-```
-
-The working medical documents remain the source of truth; `.aethelgard` contains versioned semantic products and state.
+You should see evidence, privacy/provenance data, embeddings, fact vectors, and the manifest.
 
 ---
 
+## 🔍 Search
 
-# Search and vector protection
-
-Search is a **consumer of committed vault artifacts**. It does not run Qwen and it does not change vault history.
-
-After upgrading to v0.5, run:
+Text:
 
 ```bash
-aethelgard status
-aethelgard run
+aethelgard search "pneumonia with hypoxemia"
 ```
 
-once so each case receives the new search artifacts:
-
-```text
-evidence_facts.json
-evidence_facts.npz
-```
-
-The case resolver also now uses the immediate parent directory, so a source layout such as
-`demo/CASE-001/note.txt` and `demo/CASE-002/note.txt` remains two independent cases.
-
-## Text search
+Text + image:
 
 ```bash
 aethelgard search \
-  "spontaneous pneumothorax with hypoxemia; what treatment worked?"
+  "similar radiographic case" \
+  --image CASE-00002/chest.jpg
 ```
 
-The online path is deliberately lightweight:
-
-```text
-query text
-    ↓
-EmbeddingGemma query vector
-    ↓
-exact local cosine search
-    ↓
-rank matching cases
-    ↓
-rank precomputed evidence facts
-    ↓
-minimal relevant evidence summary
-```
-
-No generative model is called at query time.
-
-## Multimodal search
-
-Add an image:
+Clean vs protected:
 
 ```bash
 aethelgard search \
-  "find clinically and radiographically similar cases" \
-  --image query.jpg
-```
-
-Aethelgard independently computes:
-
-```text
-clinical-text similarity
-medical-image similarity
-```
-
-and combines them using the configured modality weights. The component scores are shown separately for explainability.
-
-## Vector protection
-
-```bash
-aethelgard protect \
-  "spontaneous pneumothorax with hypoxemia" \
-  --image query.jpg \
-  --output protected-query.json
-```
-
-Protection occurs **after local query encoding**. Local search can use clean vectors; a future transport layer can receive only the protected envelope.
-
-The current reference protector applies independent normalized Gaussian perturbation to text and image vectors and serializes them as float16/Base64. The envelope contains no raw query text and no raw query image bytes.
-
-This is **empirical vector perturbation, not encryption and not a proof that inversion is impossible**.
-
-The default sigmas are intentionally conservative starting values (`text=0.01`, `image=0.02`). They are experiment parameters, not privacy guarantees; use `--compare-protection` and synthetic benchmark queries to tune the privacy/utility curve.
-
-For reproducible experiments:
-
-```bash
-aethelgard protect "pneumothorax" --seed 42
-```
-
-## Privacy / utility experiment
-
-The GOAI-oriented demo command is:
-
-```bash
-aethelgard search \
-  "spontaneous pneumothorax with hypoxemia; what treatment worked?" \
-  --image query.jpg \
+  "similar radiographic case" \
+  --image CASE-00002/chest.jpg \
   --compare-protection \
   --seed 42
 ```
 
-It runs the same query twice:
-
-```text
-clean vector      → local vault search
-protected vector  → local vault search simulating an external peer
-```
-
-and reports:
-
-```text
-clean ranking
-protected ranking
-Top-1 preservation
-Top-k overlap
-clean/protected cosine by modality
-relevant evidence facts
-```
-
-This provides an empirical privacy/utility measurement before any networking code exists.
-
-The two search-layer ports intended for future federation are especially important:
-
-```python
-class QueryEncoder(Protocol): ...
-class VectorProtector(Protocol): ...
-class SearchIndex(Protocol): ...
-class EvidenceSelector(Protocol): ...
-```
-
-A future transport package should consume the protected query envelope; it should not be added to the vault pipeline.
+Search uses committed vectors; it does **not** rerun Qwen.
 
 ---
 
-# Models and extension boundaries
+## 🧮 Reproduce the Research Run
 
-Aethelgard deliberately separates the medical task from the runtime.
+Generate the corpus:
 
-## Evidence extraction
-
-Protocol:
-
-```python
-class EvidenceExtractor(Protocol):
-    @property
-    def fingerprint(self) -> str: ...
-    def extract(self, bundle: CaseBundle, context: ExtractionContext) -> Extraction: ...
+```bash
+python utils/prepare_research_dataset.py \
+  dataset/Hospital_A \
+  --images-root dataset/Hospital_A \
+  --force
 ```
 
-Default:
+This creates:
 
 ```text
-StructuredEvidenceExtractor
-    ↓
-QwenStructuredModel
-    ↓
-Qwen/Qwen3-4B
-    ↓
-Outlines constrained generation
-    ↓
-atomic semantic facts
-    ↓
-deterministic facts_to_evidence()
-    ↓
-flexible evidence dictionary
+aethelgard-research/
+├── vaults/mixed/
+└── research/ground_truth.jsonl
 ```
 
-The model is not asked to invent an arbitrary JSON tree directly. It emits a constrained list of atomic facts such as `presentation.symptoms = dyspnea`; Aethelgard deterministically assembles repeated dot-path facts into the final schema-free nested evidence dictionary. This keeps the evidence schema flexible while making the model-output contract much more reliable.
-
-The same protocol can later host:
-
-```text
-Qwen3-1.7B / Qwen3-8B
-MedGemma 1.5 4B / 27B
-Phi-4-mini
-fine-tuned FunctionGemma
-FHIR deterministic extractor
-hospital-specific Python extractor
-```
-
-FunctionGemma remains useful as a future fine-tuned edge experiment, but the 270M base checkpoint is no longer the default because zero-shot heterogeneous EHR extraction proved too brittle.
-
-## Multimodal materialization
-
-Text:
-
-```text
-privacy-reviewed evidence.json
-    ↓
-EmbeddingGemma
-    ↓
-256-d clinical vector
-```
-
-Image:
-
-```text
-one or more JPG images
-    ↓
-MedSigLIP
-    ↓
-medical image vector(s)
-    ↓ mean normalized pooling
-```
-
-Fusion:
-
-```text
-sqrt(text_weight)  × normalized(text)
-       STACK
-sqrt(image_weight) × normalized(image)
-```
-
-The default weights are 0.45 text / 0.55 medical image and are part of the semantic fingerprint.
-
-Local search and vector protection are implemented as consumers of the vault. Federation is intentionally **not implemented**. The future transport layer should send the protected query envelope and execute the same search interface at the destination.
-
----
-
-# Plugins
-
-The core is Protocol-driven rather than inheritance-driven. External packages can register normal Python entry points, for example:
-
-```toml
-[project.entry-points."aethelgard.extractors"]
-hospital-x = "hospital_x.extractor:HospitalExtractor"
-```
-
-Extractor entry points are factories with one argument: the validated `ExtractorConfig`. For example:
-
-```python
-def create(config):
-    return MyHospitalExtractor(model=config.model)
-```
-
-The factory must return an object satisfying `EvidenceExtractor`. A plugin does not inherit from an Aethelgard base class. Future plugin groups can use the same pattern for readers, policies, materializers and sources.
-
----
-
-# Local folders and cloud folders
-
-Storage location is independent from compute location.
-
-A local vault can use a normal working tree:
+Initialize and run:
 
 ```bash
-aethelgard init --source .
-```
-
-Or it can maintain its local semantic state while reading documents through `fsspec` from a cloud path:
-
-```bash
-pip install -e ".[gcs,models]"
-aethelgard init --source gs://my-bucket/clinical-demo
-```
-
-For a deliberately public synthetic bucket:
-
-```bash
-aethelgard init \
-  --source gs://public-demo-bucket/records \
-  --anonymous
-```
-
-The current cloud-source implementation uses `fsspec`; GCS support is supplied by optional `gcsfs`. Future S3/Azure adapters do not require changes to the vault pipeline.
-
----
-
-# Cloud-assisted model execution
-
-Heavy models should not force every judge/user to own powerful local hardware.
-
-Aethelgard therefore separates:
-
-```text
-WHERE DOCUMENTS LIVE
-from
-WHERE SEMANTIC PROCESSING RUNS
-```
-
-Normal local processing:
-
-```bash
-aethelgard run
-```
-
-Credential-free remote processing against an Aethelgard worker:
-
-```bash
-aethelgard run --remote https://YOUR-WORKER.run.app
-```
-
-The CLI:
-
-1. computes which cases are dirty;
-2. packages only those source artifacts plus the semantic configuration;
-3. uploads the job to the worker;
-4. the worker runs the exact same extractor/policy/materializer pipeline;
-5. derived artifacts are returned as a ZIP response;
-6. the local CLI verifies/commits them into the local `.aethelgard` vault.
-
-The judge therefore needs **no GCP credentials and no Hugging Face token** when using your already-configured remote worker. The worker owns the model credentials.
-
-The HTTP executor is intended for small competition/synthetic documents. Do **not** expose a public unauthenticated worker for real PHI.
-
-## Run the worker locally
-
-```bash
-pip install -e ".[all]"
-export HF_TOKEN=hf_...
-aethelgard worker --host 0.0.0.0 --port 8080
-```
-
-Then from another machine/vault:
-
-```bash
-aethelgard run --remote http://SERVER:8080
-```
-
-The worker caches heavyweight model objects in-process across requests.
-
----
-
-# Cloud Run reference deployment
-
-The supplied `Dockerfile` runs the same worker service. The image intentionally does not bake a Hugging Face token into a Docker layer.
-
-A typical deployment is:
-
-```bash
-gcloud run deploy aethelgard-vault-worker \
-  --source . \
-  --region YOUR_REGION \
-  --memory 16Gi \
-  --cpu 4 \
-  --timeout 900 \
-  --set-secrets HF_TOKEN=HF_TOKEN:latest
-```
-
-For a public competition worker you may additionally configure unauthenticated invocation in Cloud Run IAM. Keep at least one warm instance if model cold-start latency matters.
-
-The heavy components are Qwen3-4B and MedSigLIP; CPU-only operation is supported by the architecture but can be slow. For a fast public demo, use a sufficiently provisioned cloud worker. If local latency matters more than extraction quality, configure `Qwen/Qwen3-1.7B` without changing the extractor architecture.
-
-Again: the public worker should accept **synthetic/non-sensitive demo data only** unless you add appropriate authentication, retention controls and healthcare-compliance measures.
-
----
-
-# Current CLI surface
-
-The user-facing vault commands are intentionally small:
-
-```text
-init      create a semantic vault
-status    show semantic working-tree state
-run       process dirty cases locally or through an execution backend
-show      inspect evidence/provenance/privacy/derived products
-diff      compare the two latest semantic evidence revisions
-log       show semantic revision history
-verify    verify derived-artifact integrity
-search    rank local semantic cases and relevant evidence
-protect   create/inspect a protected future-transport query envelope
-```
-
-The hidden `worker` command is an operational deployment entry point, not part of the normal vault workflow.
-
----
-
-# What is deliberately outside this version
-
-Not implemented here:
-
-- peer discovery;
-- GCP Pub/Sub federation;
-- network query routing;
-- global search;
-- consensus;
-- actual network transport of protected vectors;
-- remote hospital-node protocols.
-
-Those should become a separate package/layer later and consume only public vault interfaces/derived artifacts.
-
-The intended dependency direction is:
-
-```text
-future aethelgard-network
-          │
-          ▼
-     VaultCatalog
-          │
-          ▼
-   Aethelgard Vault
-```
-
-—not the reverse.
-
----
-
-# Competition demo sequence
-
-A compact live demo can be only six commands:
-
-```bash
-cp -R demo /tmp/aethelgard-demo
-cd /tmp/aethelgard-demo
-
+cd aethelgard-research/vaults/mixed
 aethelgard init
-aethelgard status
-aethelgard run --remote https://YOUR-WORKER.run.app
-aethelgard show CASE-001
-aethelgard show CASE-001 --view provenance
-aethelgard show CASE-001 --view derived
-aethelgard search "spontaneous pneumothorax with hypoxemia; what treatment worked?"
-aethelgard search "similar radiographic case" --image CASE-001/chest.jpg --compare-protection --seed 42
-aethelgard protect "similar radiographic case" --image CASE-001/chest.jpg --output protected-query.json
+
+python /path/to/aethelgard/utils/run_research.py \
+  --vault . \
+  --remote "$WORKER_URL" \
+  --ground-truth ../../research/ground_truth.jsonl
 ```
 
-Then edit `CASE-001/note.txt` and show:
+Notebook-ready outputs:
+
+```text
+.research/latest/
+├── summary.json
+├── cases.csv
+├── search.csv
+├── protection.csv
+└── *.jsonl
+```
+
+See **[docs/RESEARCH.md](docs/RESEARCH.md)** for the results and the notebook audit.
+
+---
+
+## ☁️ Cloud Worker
+
+The worker runs the same semantic pipeline on an L4 GPU while the Smart Folder remains local.
+
+```text
+local case → Cloud Run GPU → derived artifacts → local commit
+```
+
+For the demo:
 
 ```bash
-aethelgard status
-aethelgard run --remote https://YOUR-WORKER.run.app
-aethelgard diff CASE-001
+ENV_FILE=.env.cloud scripts/warm_service.sh --keep
 ```
 
-This demonstrates the complete idea without any networking architecture diagram: **drop medical documents → understand them → inspect evidence → generate multimodal artifacts → search them → measure clean-vs-protected retrieval → track semantic changes reproducibly.**
+Deployment details:
+
+👉 **[docs/CLOUD_RUN.md](docs/CLOUD_RUN.md)**
+
+---
+
+## 🧰 CLI Handbook
+
+```text
+init      create a Smart Folder
+status    show dirty / clean cases
+run       process locally or remotely
+show      inspect evidence / metadata
+diff      compare semantic revisions
+log       show revision history
+verify    verify stored artifacts
+search    search committed vectors
+protect   create a protected query envelope
+```
+
+---
+
+## 📚 Reference
+
+* **[Architecture](docs/ARCHITECTURE.md)**
+* **[Cloud Run](docs/CLOUD_RUN.md)**
+* **[Research](docs/RESEARCH.md)**
+* **[Research Dataset](docs/RESEARCH_DATASET.md)**
+
+---
+
+## ⚖️ License
+
+Aethelgard is open-source software distributed under the **MIT License**.
+

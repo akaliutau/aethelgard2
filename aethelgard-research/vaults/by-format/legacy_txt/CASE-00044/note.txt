@@ -1,0 +1,95 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00044
+MRN=SYN-982CF8EF
+EMAIL=patient.982cf8ef@example.test
+AGE=49
+SEX=Female
+HR=110
+BP=145/90 mmHg
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 49-year-old female presenting to the emergency department with worsening shortness of breath over the past week, orthopnea, and lower extremity edema. She reports feeling fatigued and having difficulty keeping up with her usual activities. She denies chest pain, fever, chills, or cough. Past medical history is significant for hypertension, diagnosed 5 years ago, treated with lisinopril. She also has a history of hyperlipidemia, treated with atorvastatin. She denies any history of diabetes, asthma, COPD, or known heart disease. She is a non-smoker and drinks alcohol occasionally. Family history is positive for coronary artery disease in her father. Social history is unremarkable.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 49
+**Sex:** Female
+**Date:** 2024-02-29
+**Chief Complaint:** Shortness of breath, lower extremity edema
+
+## History of Present Illness (HPI):
+Patient is a 49-year-old female presenting with a one-week history of progressive dyspnea on exertion, orthopnea (waking up short of breath at night), and bilateral lower extremity edema. She reports feeling increasingly fatigued over the past week. She denies chest pain, fever, chills, or productive cough. Symptoms have worsened significantly in the last 24 hours.
+
+## Past Medical History (PMH):
+- Hypertension (diagnosed 5 years ago, treated with lisinopril)
+- Hyperlipidemia (treated with atorvastatin)
+- No known history of diabetes, asthma, COPD, or heart disease.
+
+## Medications:
+- Lisinopril
+- Atorvastatin
+
+## Allergies:
+- NKDA
+
+## Social History:
+- Non-smoker
+- Occasional alcohol use
+
+## Family History:
+- Father with coronary artery disease
+
+## Review of Systems (ROS):
+- **Constitutional:** Fatigue
+- **Cardiovascular:** Denies chest pain. Reports orthopnea.
+- **Respiratory:** Dyspnea on exertion, denies cough or wheezing.
+- **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+- **Genitourinary:** Denies dysuria, frequency, urgency.
+- **Neurological:** Denies headache, dizziness, weakness, numbness.
+- **Musculoskeletal:** Bilateral lower extremity edema.
+- **Skin:** Denies rash, itching.
+
+## Physical Examination:
+**General:** Appears anxious, diaphoretic, in mild respiratory distress.
+**Vitals:** HR 110 bpm, BP 145/90 mmHg, RR 24 breaths/min, SpO2 92% on room air, Temp 37.0°C.
+**HEENT:** Normocephalic, atraumatic. Mucous membranes moist. JVP elevated at 8 cm.
+**Cardiovascular:** Tachycardic, regular rhythm. S1 and S2 present. No murmurs, rubs, or gallops appreciated.
+**Respiratory:** Lungs clear to auscultation bilaterally, but with diminished breath sounds at the bases. No wheezes or crackles noted initially, but some fine crackles may be present at the very bases on deeper inspiration.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Extremities:** 2+ pitting edema bilaterally up to the mid-calf.
+**Neurological:** Alert and oriented x3. Grossly intact motor and sensory function.
+
+## Labs:
+- CBC, CMP, BNP, Troponin pending.
+
+## Imaging:
+- Chest X-ray: Shows cardiomegaly and evidence of pulmonary edema (interstitial markings, possible Kerley B lines). Possible mild bibasilar atelectasis.
+
+## Assessment:
+1.  **Acute decompensated heart failure (ADHF):** The patient's presentation with progressive dyspnea, orthopnea, lower extremity edema, elevated JVP, tachycardia, and radiographic findings of cardiomegaly and pulmonary edema are highly suggestive of ADHF. Her history of hypertension is a significant risk factor.
+2.  **Hypertension:** Blood pressure is elevated (145/90 mmHg).
+
+## Plan:
+1.  **Immediate:**
+    - Place patient on supplemental oxygen via nasal cannula to maintain SpO2 > 92%.
+    - Obtain IV access.
+    - Administer IV furosemide (e.g., 40-80 mg) for diuresis.
+    - Administer sublingual nitroglycerin for preload/afterload reduction if BP allows and no contraindications.
+    - Continuous cardiac monitoring.
+    - Obtain serial ECGs and cardiac biomarkers (Troponin).
+    - Obtain BNP level.
+    - Obtain CBC, CMP, renal function tests.
+2.  **Further Management:**
+    - Initiate non-invasive positive pressure ventilation (NIPPV) if respiratory distress worsens or oxygenation does not improve.
+    - Consider initiation of IV inotropic support (e.g., dobutamine) if signs of end-organ hypoperfusion are present or if patient does not respond to initial therapy.
+    - Consult Cardiology.
+    - Echocardiogram to assess cardiac function and structure.
+    - Strict intake and output monitoring.
+    - Daily weights.
+    - Sodium restriction.
+    - Address underlying etiology (hypertension).
+3.  **Disposition:** Admission to Cardiac Care Unit (CCU) or telemetry unit for monitoring and management of ADHF.

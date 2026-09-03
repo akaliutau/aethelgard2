@@ -1,0 +1,64 @@
+PATIENT ID: patient00053
+MRN: SYN-10615C7D
+CONTACT: patient.10615c7d@example.test
+
+# Admission Note
+
+**Patient:** John Smith
+**Age:** 86
+**Sex:** Male
+**Date:** 2024-02-29
+
+## History of Present Illness (HPI):
+Mr. Smith is an 86-year-old male presenting with a 3-day history of worsening shortness of breath and productive cough (yellowish sputum). He denies fever, chills, or chest pain. He reports orthopnea and mild wheezing. Symptoms are worse with exertion.
+
+## Past Medical History (PMH):
+Hypertension, Hyperlipidemia, Atrial Fibrillation (on warfarin), Chronic Kidney Disease (Stage 3), Osteoarthritis.
+
+## Medications:
+Lisinopril, Atorvastatin, Warfarin, Acetaminophen PRN.
+
+## Allergies:
+NKDA
+
+## Social History:
+Lives at home with wife, generally independent, denies smoking.
+
+## Family History:
+Non-contributory.
+
+## Review of Systems (ROS):
+*   **Constitutional:** Denies fever, chills, weight loss.
+*   **Respiratory:** Reports worsening shortness of breath, productive cough, orthopnea, mild wheezing.
+*   **Cardiovascular:** Denies chest pain, palpitations.
+*   **Gastrointestinal:** Reports recent constipation.
+*   **Neurological:** Denies focal weakness, numbness, tingling.
+
+## Physical Examination:
+*   **General:** Elderly male, appears mildly distressed due to shortness of breath.
+*   **Vitals:** HR 115 bpm, BP 130/80 mmHg, SpO2 90% on room air, Temp 37.2°C.
+*   **HEENT:** Atraumatic, mucous membranes slightly dry.
+*   **Neck:** Supple, no JVD.
+*   **Lungs:** Auscultation reveals decreased breath sounds at the left lung base, with associated crackles. Mild wheezing is present bilaterally.
+*   **Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+*   **Abdomen:** Soft, non-tender, normoactive bowel sounds. Constipation noted on history.
+*   **Neurological:** Alert and oriented x3, no focal deficits.
+
+## Investigations:
+*   **Chest X-ray:** Shows decreased lung volume on the left side, with elevation of the left hemidiaphragm and crowding of the pulmonary vasculature. No evidence of consolidation, pneumothorax, pleural effusion, or pulmonary edema.
+*   **Labs:** CBC, BMP, Coags pending.
+
+## Assessment:
+1.  **Acute Respiratory Distress:** Likely secondary to underlying pulmonary process. The patient's symptoms (dyspnea, cough, wheezing, decreased breath sounds at the left base) and vital signs (tachycardia, hypoxia) indicate respiratory compromise.
+2.  **Possible Atelectasis:** Chest X-ray findings (decreased lung volume, elevated hemidiaphragm, crowding of vasculature) are suggestive of atelectasis, particularly at the left lung base. This could be due to mucus plugging, shallow breathing (possibly related to pain or weakness), or compression.
+3.  **Rule out other causes:** While pneumonia, pneumothorax, and heart failure are less likely given the CXR, they remain in the differential and need to be considered based on clinical picture and further investigations.
+
+## Plan:
+1.  **Oxygen Therapy:** Initiate supplemental oxygen via nasal cannula to maintain SpO2 > 92%.
+2.  **Respiratory Support:** Consider incentive spirometry and chest physiotherapy to encourage deep breathing and clear secretions, potentially helping to resolve atelectasis.
+3.  **Bronchodilators:** Administer nebulized albuterol/ipratropium for wheezing.
+4.  **Monitoring:** Continuous cardiac and pulse oximetry monitoring. Frequent reassessment of respiratory status.
+5.  **Further Investigations:** Obtain CBC, BMP, Coags, and potentially ABG to assess for infection, electrolyte abnormalities, and acid-base status. Consider D-dimer if pulmonary embolism is suspected (though less likely given presentation).
+6.  **Treat Underlying Cause:** Address potential causes of atelectasis, such as pain management (if applicable) or optimizing hydration.
+7.  **Consult:** Consider Pulmonary consult if respiratory status does not improve or if the etiology remains unclear.
+8.  **Disposition:** Admit to the hospital for monitoring and management of respiratory distress and suspected atelectasis.

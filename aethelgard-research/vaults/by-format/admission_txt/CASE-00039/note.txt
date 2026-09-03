@@ -1,0 +1,71 @@
+PATIENT ID: patient00039
+MRN: SYN-063CF0DD
+CONTACT: patient.063cf0dd@example.test
+
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 37
+**Sex:** Female
+**Date:** 2024-10-27
+**Chief Complaint:** Shortness of breath and right-sided chest pain.
+
+## History of Present Illness (HPI):
+Patient is a 37-year-old female presenting with a 3-day history of progressive shortness of breath, primarily on exertion, and sharp, pleuritic right-sided chest pain. The pain is exacerbated by deep breathing and coughing. She also reports a non-productive cough. She denies fever, chills, recent upper respiratory infection, or recent travel. She denies any history of trauma or recent surgery. She reports increasing fatigue over the past week.
+
+## Past Medical History (PMH):
+Non-contributory. No known chronic illnesses.
+
+## Medications:
+None.
+
+## Allergies:
+NKDA (No Known Drug Allergies).
+
+## Social History:
+Non-smoker, denies alcohol or illicit drug use. Works as a teacher.
+
+## Family History:
+Non-contributory.
+
+## Review of Systems (ROS):
+*   **General:** Fatigue.
+*   **HEENT:** Negative.
+*   **Respiratory:** Shortness of breath, non-productive cough, pleuritic chest pain.
+*   **Cardiovascular:** Negative.
+*   **GI:** Negative.
+*   **GU:** Negative.
+*   **Neurological:** Negative.
+*   **Musculoskeletal:** Negative.
+*   **Skin:** Negative.
+*   **Psychiatric:** Negative.
+
+## Physical Examination:
+*   **General:** Alert and oriented, appears uncomfortable due to shortness of breath.
+*   **Vitals:** HR 105 bpm, BP 110/70 mmHg, SpO2 92% on room air, Temp 37.2°C (99.0°F).
+*   **HEENT:** Normal.
+*   **Neck:** Supple, no JVD.
+*   **Lungs:** Decreased breath sounds at the right lung base. Dullness to percussion over the right lower chest. No wheezes or crackles appreciated elsewhere. Left lung clear to auscultation.
+*   **Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+*   **Skin:** Warm, dry, no rashes or lesions.
+*   **Neurological:** Grossly intact.
+
+## Investigations:
+*   **Chest X-ray (CXR):** Shows a moderate right-sided pleural effusion. No evidence of pneumothorax or obvious consolidation. Possible atelectasis in the right lower lobe secondary to the effusion.
+
+## Assessment:
+1.  **Right-sided Pleural Effusion:** Moderate in size, causing decreased breath sounds and dullness to percussion at the right base. Etiology is currently unclear and requires further investigation. Differential includes infection (parapneumonic effusion, empyema), malignancy, inflammatory conditions (e.g., lupus, rheumatoid arthritis), heart failure (less likely given age and lack of other signs), pulmonary embolism (less likely given presentation), or idiopathic.
+2.  **Hypoxia:** SpO2 92% on room air, likely secondary to the pleural effusion impairing gas exchange.
+3.  **Tachycardia:** HR 105 bpm, likely compensatory for hypoxia and/or pain/anxiety.
+
+## Plan:
+1.  **Admit to hospital:** For further evaluation and management of the pleural effusion and associated symptoms.
+2.  **Oxygen therapy:** Initiate supplemental oxygen via nasal cannula to maintain SpO2 > 94%.
+3.  **Thoracentesis:** Perform diagnostic thoracentesis to analyze the pleural fluid (cell count, differential, protein, LDH, glucose, cytology, Gram stain, culture). This will help determine the etiology (transudate vs. exudate) and guide further management.
+4.  **Labs:** Order comprehensive metabolic panel (CMP), complete blood count (CBC) with differential, lactate dehydrogenase (LDH), D-dimer, inflammatory markers (ESR, CRP), and blood cultures.
+5.  **Imaging:** Consider CT scan of the chest with contrast if thoracentesis is non-diagnostic or if malignancy is suspected, or if there is concern for underlying parenchymal disease or loculations.
+6.  **Consults:** Consider consultation with pulmonology and potentially oncology depending on thoracentesis results.
+7.  **Pain management:** Provide analgesia for pleuritic chest pain as needed.
+8.  **Monitor:** Closely monitor vital signs, respiratory status, and oxygen saturation.
+

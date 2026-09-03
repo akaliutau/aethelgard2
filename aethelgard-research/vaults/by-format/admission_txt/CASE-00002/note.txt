@@ -1,0 +1,91 @@
+PATIENT ID: patient00002
+MRN: SYN-38F4E2E0
+CONTACT: patient.38f4e2e0@example.test
+
+# Admission Note
+
+**Patient:** [Patient Name - Synthetic]
+**Age:** 87
+**Sex:** Female
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+
+Worsening shortness of breath.
+
+## History of Present Illness
+
+Patient is an 87-year-old female presenting with a 3-day history of progressively worsening shortness of breath. She also reports a productive cough with yellowish sputum, chills, and generalized weakness. She denies chest pain, palpitations, or lower extremity swelling. Symptoms began gradually and have worsened over the past 72 hours.
+
+## Past Medical History
+
+*   Hypertension
+*   Osteoarthritis
+*   Chronic Kidney Disease Stage 3
+
+## Medications
+
+*   Lisinopril
+*   Acetaminophen
+*   Multivitamin
+
+## Allergies
+
+NKDA
+
+## Social History
+
+Non-smoker. Denies alcohol or illicit drug use. Lives at home with home health aide.
+
+## Family History
+
+Non-contributory.
+
+## Review of Systems
+
+*   **Constitutional:** Reports chills, weakness.
+*   **Respiratory:** Reports shortness of breath, productive cough (yellowish sputum).
+*   **Cardiovascular:** Denies chest pain, palpitations, edema.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Neurological:** Denies headache, dizziness, focal weakness.
+
+## Physical Examination
+
+*   **General:** Elderly female, appears acutely ill, slightly diaphoretic.
+*   **Vitals:** HR 115 bpm, BP 90/60 mmHg, SpO2 88% on room air, Temp 38.5°C (101.3°F).
+*   **HEENT:** Mucous membranes slightly dry. No obvious signs of trauma.
+*   **Neck:** Supple, no lymphadenopathy or thyroid enlargement.
+*   **Lungs:** Auscultation reveals crackles and bronchial breath sounds in the right lower lobe. Decreased breath sounds noted diffusely bilaterally, possibly due to age-related changes or underlying lung disease. Increased work of breathing, including accessory muscle use.
+*   **Cardiovascular:** Tachycardic, regular rhythm. No murmurs, rubs, or gallops appreciated. Peripheral pulses 2+ bilaterally.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+*   **Neurological:** Alert and oriented to person, place, and time. Gross motor and sensory function intact.
+*   **Skin:** Warm, dry, slightly diaphoretic. No rashes or lesions noted.
+
+## Investigations
+
+*   **Chest X-ray:** (Findings pending, but clinical suspicion high for pneumonia given presentation and exam)
+*   CBC, CMP, Lactate, Blood Cultures, Sputum Culture
+
+## Assessment
+
+1.  **Hypotension and Tachycardia:** Likely secondary to sepsis/infection.
+2.  **Hypoxemia:** SpO2 88% on room air, consistent with respiratory compromise.
+3.  **Fever and Chills:** Suggestive of an infectious process.
+4.  **Productive Cough, Shortness of Breath, Crackles/Bronchial Breath Sounds:** Highly suggestive of pneumonia, likely right lower lobe.
+5.  **Possible Sepsis:** Given hypotension, tachycardia, fever, and likely source of infection (pneumonia).
+
+## Plan
+
+1.  **Admit to Medical Floor/ICU:** Given age, comorbidities, vital sign instability (hypotension, tachycardia, hypoxemia), and suspected sepsis.
+2.  **Oxygen Therapy:** Initiate supplemental oxygen via nasal cannula or mask to maintain SpO2 > 90%.
+3.  **IV Fluids:** Start IV fluids (e.g., Normal Saline) for resuscitation given hypotension.
+4.  **Antibiotics:** Initiate broad-spectrum IV antibiotics (e.g., Ceftriaxone + Azithromycin) empirically for community-acquired pneumonia, pending culture results.
+5.  **Labs:** Obtain CBC, CMP, Lactate, Blood Cultures, Sputum Culture, Urinalysis.
+6.  **Cardiac Monitoring:** Continuous cardiac monitoring due to tachycardia and potential for arrhythmia.
+7.  **Frequent Vitals:** Monitor vital signs closely (q15min initially, then q1-2h).
+8.  **Consider Vasopressors:** If hypotension persists despite fluid resuscitation.
+9.  **Chest X-ray:** Review chest x-ray results when available to confirm pneumonia and rule out other pathology.
+10. **Consult Respiratory Therapy:** For potential need for non-invasive ventilation if respiratory status worsens.
+11. **Monitor Urine Output:** Due to CKD and potential for acute kidney injury.
+

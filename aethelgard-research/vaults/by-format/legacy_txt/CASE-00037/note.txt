@@ -1,0 +1,90 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00037
+MRN=SYN-883E34B9
+EMAIL=patient.883e34b9@example.test
+AGE=63
+SEX=Female
+HR=110
+BP=130/85 mmHg
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+The patient is a 63-year-old female presenting to the emergency department with acute onset shortness of breath and pleuritic chest pain that started approximately 2 hours ago. She describes the pain as sharp and worsening with inspiration, localized to the right lower chest. She denies any recent trauma, cough, fever, or sputum production. She has a history of hypertension, hyperlipidemia, and osteoarthritis, managed with lisinopril, atorvastatin, and ibuprofen respectively. She is a former smoker, having quit 15 years ago (20 pack-year history). She denies any history of asthma, COPD, or previous pulmonary embolism. She reports feeling generally well until the sudden onset of symptoms. She denies any recent travel or prolonged immobilization.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** [Patient Name - Synthetic]
+**Age:** 63
+**Sex:** Female
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset shortness of breath and pleuritic chest pain.
+
+## History of Present Illness (HPI)
+63-year-old female presents with sudden onset shortness of breath and sharp, right-sided pleuritic chest pain that began approximately 2 hours ago. The pain is exacerbated by deep inspiration. She denies cough, fever, sputum production, recent trauma, or recent travel. She reports no recent immobilization. Symptoms started abruptly while she was resting at home.
+
+## Past Medical History (PMH)
+- Hypertension
+- Hyperlipidemia
+- Osteoarthritis
+- Former smoker (quit 15 years ago, 20 pack-year history)
+
+## Medications
+- Lisinopril
+- Atorvastatin
+- Ibuprofen (PRN)
+
+## Allergies
+NKDA
+
+## Social History
+Former smoker. Denies alcohol or illicit drug use.
+
+## Family History
+Non-contributory.
+
+## Review of Systems (ROS)
+- **General:** Denies fever, chills, weight loss.
+- **HEENT:** Denies headache, vision changes, hearing loss, sore throat.
+- **Cardiovascular:** Denies palpitations, edema.
+- **Respiratory:** Positive for acute onset shortness of breath and pleuritic chest pain. Denies cough, wheezing, sputum.
+- **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+- **Genitourinary:** Denies dysuria, frequency, urgency.
+- **Musculoskeletal:** Denies joint pain other than baseline osteoarthritis.
+- **Neurological:** Denies headache, weakness, numbness, tingling.
+- **Psychiatric:** Denies anxiety, depression.
+
+## Physical Examination
+**General:** Anxious appearing female in moderate respiratory distress.
+**Vitals:** HR 110 bpm, BP 130/85 mmHg, RR 24 breaths/min, SpO2 92% on room air, Temp 37.0°C (oral).
+**HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD.
+**Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+**Respiratory:** Tachypneic. Auscultation reveals clear lung sounds bilaterally, without wheezes, crackles, or rhonchi. No pleural rub appreciated.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Neurological:** Alert and oriented to person, place, and time. Gross motor and sensory function intact.
+**Skin:** Warm, dry, and intact. No rashes or lesions.
+
+## Assessment
+1.  **Acute Shortness of Breath and Pleuritic Chest Pain:** Differential diagnosis includes pulmonary embolism (PE), pneumothorax, pneumonia, pericarditis, musculoskeletal pain, acute coronary syndrome. Given the sudden onset, pleuritic nature of the pain, tachypnea, tachycardia, and mild hypoxia, PE is high on the differential. Pneumothorax is less likely given clear lung sounds bilaterally on auscultation, but cannot be ruled out without imaging. Pneumonia is less likely given the absence of fever, cough, and sputum production, and clear lung sounds. Pericarditis is less likely given the lack of positional changes or pericardial rub. ACS is less likely given the pleuritic nature of the pain, but needs consideration. Musculoskeletal pain is less likely given the acute onset and associated shortness of breath and hypoxia.
+2.  **Risk Factors for PE:** Age > 50, former smoker, hypertension, hyperlipidemia.
+
+## Plan
+1.  **Immediate:** Apply supplemental oxygen via nasal cannula to maintain SpO2 > 94%. Obtain continuous cardiac monitoring. Establish IV access.
+2.  **Diagnostic:**
+    -   **STAT Chest X-ray (CXR):** To rule out pneumothorax, pneumonia, pleural effusion, and assess for signs suggestive of PE (e.g., Westermark sign, Hampton hump - though often absent).
+    -   **STAT EKG:** To rule out acute coronary syndrome or signs of right heart strain (e.g., S1Q3T3).
+    -   **STAT D-dimer:** If low pre-test probability based on Wells score or PERC rule (though clinical presentation is concerning).
+    -   **STAT CT Angiography (CTA) of the Chest:** High clinical suspicion for PE warrants definitive imaging. This is the preferred test given the acute presentation and concerning vital signs.
+    -   **Arterial Blood Gas (ABG):** To assess oxygenation, ventilation, and acid-base status.
+    -   **Complete Blood Count (CBC), Basic Metabolic Panel (BMP), Troponin:** Baseline labs.
+3.  **Treatment:**
+    -   Pending diagnostic results, consider empiric anticoagulation if PE is highly suspected and CTA is delayed, after assessing bleeding risk.
+    -   Pain management with IV analgesics (e.g., morphine) if needed.
+    -   Monitor vital signs closely.
+
+## Follow-up
+Will reassess patient after diagnostic workup is complete and treatment is initiated as appropriate.

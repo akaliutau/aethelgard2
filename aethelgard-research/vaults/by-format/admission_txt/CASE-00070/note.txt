@@ -1,0 +1,68 @@
+PATIENT ID: patient00070
+MRN: SYN-2DEE217C
+CONTACT: patient.2dee217c@example.test
+
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 42
+**Sex:** Male
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset right-sided pleuritic chest pain.
+
+## History of Present Illness
+Patient is a 42-year-old male with no significant past medical history other than well-controlled hypertension, presenting with acute onset of sharp, stabbing right-sided chest pain that began approximately 2 hours ago while walking. The pain is pleuritic in nature, worsening with deep inspiration and movement. He denies any trauma, recent illness, cough, fever, or sputum production. He denies shortness of breath at rest but reports mild dyspnea on exertion. He denies palpitations, dizziness, or syncope. He is a non-smoker.
+
+## Past Medical History
+Hypertension (well-controlled on lisinopril).
+
+## Medications
+Lisinopril 10mg daily.
+
+## Allergies
+NKDA.
+
+## Social History
+Non-smoker, denies illicit drug use, occasional alcohol use.
+
+## Family History
+Non-contributory.
+
+## Review of Systems
+As per HPI. Denies fever, chills, cough, sputum, palpitations, dizziness, syncope, lower extremity swelling.
+
+## Physical Examination
+**General:** Alert and oriented, appears anxious but in no acute distress.
+**Vitals:** HR 110 bpm, BP 110/70 mmHg, RR 22 breaths/min, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+**HEENT:** Atraumatic, normocephalic.
+**Neck:** Supple, no JVD.
+**Lungs:** Decreased breath sounds on the right side compared to the left. No wheezes, rales, or rhonchi auscultated bilaterally. Percussion reveals hyperresonance on the right side.
+**Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. S1 and S2 normal.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Neurologic:** Grossly intact.
+**Skin:** Warm, dry, no rashes or lesions.
+
+## Investigations
+Chest X-ray (CXR) ordered and obtained.
+
+## Assessment
+42-year-old male presenting with acute onset right-sided pleuritic chest pain, dyspnea on exertion, tachycardia, and hypoxia. Physical exam reveals decreased breath sounds and hyperresonance on the right side. These findings are highly suggestive of a right-sided spontaneous pneumothorax.
+
+## Plan
+1.  **STAT Chest X-ray:** To confirm the diagnosis of pneumothorax and assess its size.
+2.  **Supplemental Oxygen:** Apply via nasal cannula to maintain SpO2 > 94%.
+3.  **IV Access:** Establish peripheral IV access.
+4.  **Pain Management:** Administer IV analgesia (e.g., morphine or fentanyl) for chest pain.
+5.  **Consult Thoracic Surgery:** For evaluation and management of the pneumothorax. Management will depend on the size of the pneumothorax and the patient's clinical status. Options include observation, needle aspiration, or chest tube placement.
+6.  **Continuous Monitoring:** Monitor vital signs, respiratory status, and pain level closely.
+7.  **Labs:** Obtain CBC, BMP, and coagulation studies.
+
+## Prognosis
+Prognosis is generally good with appropriate management. Recurrence is possible.
+
+**Attending Physician:** Dr. [Your Name]
+**Signature:**
+

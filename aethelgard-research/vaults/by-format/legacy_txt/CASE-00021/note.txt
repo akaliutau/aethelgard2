@@ -1,0 +1,90 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00021
+MRN=SYN-4D773D47
+EMAIL=patient.4d773d47@example.test
+AGE=36
+SEX=Female
+HR=110
+BP=110/70 mmHg
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 36-year-old female presenting to the emergency department with acute onset shortness of breath and pleuritic chest pain, which began approximately 2 hours ago while she was resting at home. She denies any recent trauma, fever, cough, or sputum production. She has no significant past medical history, no known allergies, and is not currently taking any medications. She is a non-smoker and denies illicit drug use. She reports feeling well until the sudden onset of symptoms. Family history is non-contributory. Social history is unremarkable.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 36
+**Sex:** Female
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+
+Acute onset shortness of breath and pleuritic chest pain.
+
+## History of Present Illness (HPI)
+
+Patient is a 36-year-old female with no significant past medical history who presents to the ED with acute onset shortness of breath and sharp, pleuritic chest pain on the right side. Symptoms began approximately 2 hours ago while she was resting at home. The pain is exacerbated by deep inspiration and movement. She denies any preceding trauma, fever, cough, sputum production, or recent illness. She denies any history of smoking or known lung disease.
+
+## Review of Systems (ROS)
+
+*   **Constitutional:** Denies fever, chills, weight loss.
+*   **Respiratory:** Positive for acute onset shortness of breath and pleuritic chest pain. Denies cough, wheezing, or sputum.
+*   **Cardiovascular:** Denies chest pain (other than pleuritic), palpitations, or edema.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, or abdominal pain.
+*   **Neurological:** Denies headache, dizziness, weakness, or numbness.
+
+## Past Medical History (PMH)
+
+None reported.
+
+## Medications
+
+None reported.
+
+## Allergies
+
+No known drug allergies (NKDA).
+
+## Social History
+
+Non-smoker, denies illicit drug use, denies alcohol use.
+
+## Family History
+
+Non-contributory.
+
+## Physical Examination
+
+*   **General:** Alert and oriented, appears anxious, in moderate respiratory distress.
+*   **Vitals:** HR 110 bpm, BP 110/70 mmHg, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+*   **Respiratory:** Tachypneic (RR 24). Auscultation reveals decreased breath sounds on the right side compared to the left. No wheezes or crackles appreciated. Percussion reveals hyperresonance on the right side.
+*   **Cardiovascular:** Tachycardic, regular rhythm. No murmurs, rubs, or gallops.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+*   **Neurological:** Grossly intact.
+*   **Skin:** Warm, dry, no rashes or lesions.
+
+## Investigations
+
+*   **Chest X-ray (CXR):** Ordered and pending. (Note: Based on the provided ground truth, the CXR will show a pneumothorax, specifically absence of consolidation).
+
+## Assessment
+
+1.  **Suspected Spontaneous Pneumothorax:** Based on acute onset pleuritic chest pain, shortness of breath, decreased breath sounds, and hyperresonance on the right side. The patient's age and lack of smoking history suggest a primary spontaneous pneumothorax.
+
+## Plan
+
+1.  **Obtain CXR:** Confirm diagnosis of pneumothorax and assess its size.
+2.  **Supplemental Oxygen:** Administer oxygen via nasal cannula to maintain SpO2 > 92%.
+3.  **Cardiac Monitor:** Place patient on cardiac monitor.
+4.  **IV Access:** Establish intravenous access.
+5.  **Pain Management:** Administer analgesics (e.g., NSAIDs or opioids) for chest pain.
+6.  **Consult Thoracic Surgery/Pulmonary:** Depending on the size of the pneumothorax on CXR and the patient's clinical status, consider chest tube placement or observation.
+7.  **Serial Exams:** Monitor vital signs and respiratory status closely.
+
+## Disposition
+
+Admit to hospital for management of suspected pneumothorax.

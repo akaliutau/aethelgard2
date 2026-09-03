@@ -1,0 +1,80 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00011
+MRN=SYN-91ABE7ED
+EMAIL=patient.91abe7ed@example.test
+AGE=22
+SEX=Female
+HR=110
+BP=110/70 mmHg
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+The patient is a 22-year-old female presenting to the emergency department with acute onset of sharp, pleuritic chest pain on the right side, which started approximately 2 hours ago while she was walking. She denies any preceding trauma, cough, fever, or recent illness. She reports feeling slightly short of breath, but denies dizziness or syncope. She is a non-smoker and has no significant past medical history. She is not currently taking any medications. Family history is non-contributory. Social history is negative for illicit drug use. She is sexually active and uses oral contraceptives.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** [Patient Name - Synthetic]
+**Age:** 22
+**Sex:** Female
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## Chief Complaint
+Acute onset right-sided chest pain and shortness of breath.
+
+## History of Present Illness (HPI)
+The patient is a 22-year-old female with no significant past medical history who presents with acute onset of sharp, pleuritic right-sided chest pain that began approximately 2 hours ago while walking. The pain is described as 7/10 in intensity and is exacerbated by deep inspiration. She also reports associated shortness of breath, but denies cough, fever, chills, sputum production, recent illness, trauma, or history of smoking. She denies dizziness, lightheadedness, or syncope.
+
+## Review of Systems (ROS)
+*   **Constitutional:** Denies fever, chills, weight loss.
+*   **Respiratory:** Denies cough, sputum, wheezing. Reports shortness of breath.
+*   **Cardiovascular:** Denies chest pain (other than described), palpitations, edema.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Neurological:** Denies headache, dizziness, focal weakness.
+
+## Past Medical History (PMH)
+None reported.
+
+## Medications
+None reported.
+
+## Allergies
+NKDA (No Known Drug Allergies).
+
+## Social History
+Non-smoker. Denies illicit drug use. Sexually active, uses oral contraceptives.
+
+## Family History
+Non-contributory.
+
+## Physical Examination
+*   **General:** Alert and oriented, appears anxious, in mild respiratory distress.
+*   **Vitals:** HR 110 bpm, BP 110/70 mmHg, RR 24 breaths/min, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+*   **HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD.
+*   **Neck:** Supple, no lymphadenopathy.
+*   **Lungs:** Decreased breath sounds on the right side compared to the left. No wheezes or crackles appreciated on the left. Percussion note is hyperresonant on the right side.
+*   **Cardiovascular:** Tachycardic, regular rhythm. No murmurs, rubs, or gallops. Peripheral pulses 2+ bilaterally.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+*   **Skin:** Warm, dry, no rashes or lesions.
+*   **Extremities:** No edema, cyanosis, or clubbing.
+
+## Investigations
+*   **Chest X-ray (CXR):** Ordered stat. (Note: Based on the provided ground truth, the CXR will show findings consistent with a pneumothorax, but no atelectasis, consolidation, or pleural effusion.)
+
+## Assessment
+1.  **Suspected Spontaneous Pneumothorax (Right-sided):** Based on the acute onset of pleuritic chest pain, shortness of breath, decreased breath sounds, and hyperresonance to percussion on the right side, along with tachycardia and mild hypoxia. The patient's age and lack of smoking history are consistent with primary spontaneous pneumothorax.
+
+## Plan
+1.  **Obtain Stat Chest X-ray:** To confirm the diagnosis of pneumothorax and assess its size.
+2.  **Supplemental Oxygen:** Administer via nasal cannula to maintain SpO2 > 94%.
+3.  **Cardiac Monitor:** Continuous monitoring due to tachycardia and potential hemodynamic instability.
+4.  **IV Access:** Establish peripheral IV access.
+5.  **Pain Management:** Administer analgesics (e.g., IV morphine or ketorolac) for chest pain.
+6.  **Consult Thoracic Surgery:** Based on CXR findings (size of pneumothorax) and clinical status, determine the need for chest tube placement or observation.
+7.  **Serial Vital Signs and Respiratory Assessment:** Monitor closely for any signs of worsening respiratory distress or hemodynamic instability.
+8.  **Labs:** Obtain CBC, BMP, and possibly ABG depending on clinical status and CXR findings.
+
+## Disposition
+Admit to the hospital for management of suspected spontaneous pneumothorax pending CXR confirmation and definitive treatment.

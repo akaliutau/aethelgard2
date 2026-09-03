@@ -1,0 +1,74 @@
+PATIENT ID: patient00029
+MRN: SYN-FC7D3B30
+CONTACT: patient.fc7d3b30@example.test
+
+# Admission Note
+
+**Patient:** [Patient Name - Synthetic]
+**Age:** 37
+**Sex:** Female
+**Date:** 2024-02-29
+**Time:** 14:35
+
+## HPI
+
+37-year-old female presents with a 2-day history of progressive shortness of breath and right-sided pleuritic chest pain. Pain is worse with deep breaths and coughing. Denies fever, chills, productive cough, or recent trauma. Reports fatigue.
+
+## Past Medical History
+
+Well-controlled asthma (uses albuterol PRN).
+
+## Social History
+
+Non-smoker. Teacher.
+
+## Family History
+
+Non-contributory.
+
+## Review of Systems
+
+*   **Constitutional:** Fatigue.
+*   **Respiratory:** Shortness of breath, pleuritic chest pain.
+*   **Cardiovascular:** Denies palpitations, chest tightness (other than pleuritic pain).
+*   **GI:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **GU:** Denies dysuria, frequency, urgency.
+*   **Neurologic:** Denies headache, dizziness, focal weakness.
+*   **Skin:** Denies rash, lesions.
+
+## Physical Examination
+
+*   **General:** Alert and oriented, appears uncomfortable due to shortness of breath.
+*   **Vitals:** HR 110 bpm, BP 110/70 mmHg, SpO2 92% on room air, Temp 37.2°C (99.0°F).
+*   **Respiratory:** Tachypneic (RR 24). Lungs clear to auscultation bilaterally, but decreased breath sounds noted in the right lower lobe. No wheezing or crackles appreciated. Mild intercostal retractions noted.
+*   **Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present.
+*   **Neurologic:** Grossly intact.
+*   **Skin:** Warm, dry, no rashes.
+
+## Investigations
+
+*   **Chest X-ray:** Ordered. (Findings pending, but clinical suspicion is high for atelectasis given the presentation and physical exam findings of decreased breath sounds in the right lower lobe without signs of consolidation or effusion). *Note: Based on the provided ground truth, the X-ray shows atelectasis.* 
+*   **CBC:** Ordered.
+*   **BMP:** Ordered.
+*   **D-dimer:** Ordered (to rule out PE, although less likely given presentation).
+*   **ABG:** Ordered (due to hypoxia).
+
+## Assessment
+
+1.  **Shortness of breath and pleuritic chest pain:** Likely secondary to right lower lobe atelectasis, given decreased breath sounds on exam. Asthma exacerbation is less likely given lack of wheezing and clear lung sounds elsewhere. Pneumonia is less likely given absence of fever, chills, and productive cough, and clear lung sounds except for decreased breath sounds. Pneumothorax is less likely given lack of hyperresonance and clear lung sounds elsewhere. Pulmonary embolism is possible but less likely given the insidious onset and lack of risk factors.
+2.  **Hypoxia (SpO2 92%):** Consistent with underlying pulmonary pathology (atelectasis).
+3.  **Tachycardia (HR 110):** Likely compensatory response to hypoxia and discomfort.
+
+## Plan
+
+1.  **Admit to Medicine:** For further evaluation and management of shortness of breath and hypoxia.
+2.  **Oxygen Therapy:** Titrate to maintain SpO2 > 94%.
+3.  **Chest Physiotherapy:** Encourage deep breathing and coughing exercises to help re-expand the affected lung segment.
+4.  **Pain Management:** Provide analgesia for pleuritic chest pain (e.g., NSAIDs or acetaminophen).
+5.  **Monitor:** Closely monitor vital signs, respiratory status, and oxygen saturation.
+6.  **Further Investigations:** Review results of CBC, BMP, D-dimer, ABG, and Chest X-ray (confirming atelectasis). Consider CT chest if etiology of atelectasis remains unclear or if there is concern for underlying obstruction or mass.
+7.  **Consult Respiratory Therapy:** For potential incentive spirometry or other airway clearance techniques.
+8.  **Consider Bronchodilators:** Although asthma exacerbation is less likely, a trial of albuterol may be considered if there is any component of bronchospasm.
+
+**Prognosis:** Generally good with appropriate management. Atelectasis often resolves with conservative measures, but underlying cause needs to be identified and addressed.

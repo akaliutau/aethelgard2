@@ -1,0 +1,81 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00022
+MRN=SYN-D9778419
+EMAIL=patient.d9778419@example.test
+AGE=55
+SEX=Female
+HR=110
+BP=130/80
+SpO2=92
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is a 55-year-old female presenting with progressive shortness of breath over the past 3 weeks, initially exertional but now present at rest. She also reports a non-productive cough and fatigue. She denies fever, chills, chest pain, or recent travel. Past medical history is significant for hypertension, well-controlled with lisinopril, and hyperlipidemia, treated with atorvastatin. She is a former smoker, having quit 10 years ago after a 20 pack-year history. Family history is non-contributory. Social history includes moderate alcohol consumption. She denies illicit drug use.
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** Jane Doe
+**Age:** 55
+**Sex:** Female
+**Date:** 2024-02-29
+
+## Chief Complaint
+Progressive shortness of breath.
+
+## History of Present Illness
+Ms. Doe is a 55-year-old female presenting with a 3-week history of worsening shortness of breath. The dyspnea initially occurred with exertion (e.g., climbing stairs) but has progressed to occur even at rest. She also reports a persistent, non-productive cough and increasing fatigue over the same period. She denies any associated chest pain, fever, chills, night sweats, or weight loss. She denies recent travel or sick contacts.
+
+## Past Medical History
+- Hypertension (controlled with lisinopril)
+- Hyperlipidemia (treated with atorvastatin)
+
+## Social History
+- Former smoker (quit 10 years ago, 20 pack-year history)
+- Moderate alcohol consumption
+- Denies illicit drug use
+
+## Family History
+Non-contributory.
+
+## Medications
+- Lisinopril
+- Atorvastatin
+
+## Allergies
+NKDA
+
+## Review of Systems
+- **Constitutional:** Reports fatigue.
+- **Respiratory:** Reports progressive shortness of breath and non-productive cough.
+- **Cardiovascular:** Denies chest pain, palpitations, or edema.
+- **Gastrointestinal:** Denies nausea, vomiting, diarrhea, or abdominal pain.
+- **Neurological:** Denies headache, dizziness, weakness, or numbness.
+
+## Physical Examination
+**General:** Alert and oriented, appears fatigued.
+**Vitals:** HR 110 bpm, BP 130/80 mmHg, RR 24 breaths/min, SpO2 92% on room air, Temp 37.0°C (98.6°F).
+**HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD.
+**Lungs:** Decreased breath sounds at the right lung base. Dullness to percussion at the right lung base. No wheezes or crackles appreciated elsewhere.
+**Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops. No peripheral edema.
+**Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+**Neurological:** Grossly intact.
+
+## Investigations
+- Chest X-ray: Shows a moderate-sized right pleural effusion.
+- CBC: Pending.
+- CMP: Pending.
+- BNP: Pending.
+- D-dimer: Pending.
+
+## Assessment
+1.  **Right Pleural Effusion:** Moderate-sized effusion causing dyspnea and decreased breath sounds/dullness to percussion at the right base. Etiology unclear at this time, but given the patient's age, smoking history, and progressive symptoms, malignancy is a significant concern. Other possibilities include infection (parapneumonic effusion), heart failure, or pulmonary embolism, although the presentation is less typical for these.
+
+## Plan
+1.  **Admit to hospital:** For further evaluation and management of the pleural effusion and underlying cause.
+2.  **Oxygen supplementation:** Maintain SpO2 > 92%.
+3.  **Thoracentesis:** Diagnostic and potentially therapeutic thoracentesis planned for tomorrow morning. Fluid will be sent for cell count and differential, protein, LDH, glucose, cytology, Gram stain, culture, and possibly cytology for malignant cells.
+4.  **Labs:** Repeat CBC, CMP, BNP, D-dimer. Consider coagulation studies prior to thoracentesis.
+5.  **Imaging:** Consider CT scan of the chest with contrast after thoracentesis to evaluate the pleura, lung parenchyma, and mediastinum for underlying malignancy or other pathology.
+6.  **Consultations:** Pulmonary consultation requested for management of pleural effusion and potential underlying lung pathology. Cardiology consult if heart failure is suspected based on BNP or clinical picture.
+7.  **Monitor:** Closely monitor respiratory status, vital signs, and oxygen saturation.
