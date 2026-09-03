@@ -212,6 +212,13 @@ Models that need you to manually agree with T&C:
 
 If already deployed remote worker is used, no additional settings are needed.
 
+```text
+cp .env.cloud.example .env.cloud
+cp .env.example .env
+```
+
+Update secrets and other variables in .env, f.e. HF_TOKEN
+
 ---
 
 ## 🧪 Run the One-Record Demo
@@ -237,7 +244,7 @@ Expected:
 aethelgard run
 ```
 
-Nore: the fresh run loads Qwen, EmbeddingGemma, and MedSigLIP locally, so that cold run can take time (5-7 min).
+Note: the fresh run loads `Qwen`, `EmbeddingGemma`, and `MedSigLIP` locally, so that cold run can take time (5-7 min).
 Subsequent runs usually require 1-2 min to finish. This is applicable for cloud instance as well.
 
 
@@ -326,7 +333,7 @@ Deployment details:
 
 ---
 
-## 🧰 aethelgard CLI Handbook
+## 🧰 aethelgard CLI Runbook
 
 ```text
 init      create a Smart Folder
