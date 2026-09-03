@@ -24,7 +24,7 @@ creating a scalable infrastructure for global clinical knowledge exchange
 The core idea of Aethelgard is the concept of _Smart Folder_, with allows to turn the directory with collections of medical notes, files, 
 and images into a semantic vault. It detects semantic changes, extracts structured clinical evidence, applies protection policy, creates multimodal
 representations, records provenance, and commits the result as a semantic revision. It resembles some VCS such as  `git`, but focuses on automatically generating 
-the safe semantic representation of undelaying data, which can be shared with peers.
+the safe semantic representation of underlying data, which can be shared with peers.
 
 Each Smart Folder, when coupled with network interface, becomes a node in a distributed network, that allow to share knowledge.
 
