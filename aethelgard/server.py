@@ -8,6 +8,11 @@ import zipfile
 from io import BytesIO
 from pathlib import Path
 
+try:
+    from fastapi import FastAPI, HTTPException, Request, Response
+except ImportError as exc:
+    raise RuntimeError('Worker service requires `pip install -e .[cloud]`') from exc
+
 from .adapters.executors.local import LocalExecutor
 from .config import SourceConfig, VaultConfig
 from .factory import build_components, build_pipeline
@@ -60,12 +65,16 @@ _runtime = WorkerRuntime()
 
 
 def create_app():
-    try:
-        from fastapi import FastAPI, HTTPException, Request, Response
-    except ImportError as exc:
-        raise RuntimeError('Worker service requires `pip install -e .[cloud]`') from exc
-
     app = FastAPI(title='Aethelgard Vault Worker', version='0.6.0')
+
+    @app.get('/')
+    def root():
+        return {
+            'service': 'aethelgard-vault-worker',
+            'status': 'ok',
+            'health': '/healthz',
+            'process': '/v1/process',
+        }
 
     @app.get('/healthz')
     def healthz():
@@ -103,8 +112,9 @@ def create_app():
                 results = executor.process(job.get('case_ids'))
                 return Response(content=encode_results(results), media_type='application/zip')
             except Exception as exc:
+                import traceback
+                traceback.print_exc()
                 raise HTTPException(500, str(exc)) from exc
-
     return app
 
 

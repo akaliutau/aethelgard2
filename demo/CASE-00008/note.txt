@@ -1,0 +1,94 @@
+LEGACY EHR TEXT EXPORT
+PATIENT_ID=patient00008
+MRN=SYN-4B49236F
+EMAIL=patient.4b49236f@example.test
+AGE=81
+SEX=Male
+HR=110
+BP=130/80
+SpO2=90
+Temp=37.0
+
+CLINICAL HISTORY
+Patient is an 81-year-old male with a history of hypertension, hyperlipidemia, and osteoarthritis presenting to the emergency department today with worsening shortness of breath over the past week. He reports that the shortness of breath initially occurred with exertion but has progressed to occurring at rest. He denies chest pain, fever, chills, or productive cough. He has noticed some mild swelling in his lower extremities. He denies recent travel or sick contacts. He takes lisinopril, atorvastatin, and acetaminophen as needed. He is a former smoker, having quit 20 years ago (20 pack-year history).
+
+ADMISSION NOTE
+# Admission Note
+
+**Patient:** John Doe
+**Age:** 81
+**Sex:** Male
+**Date:** 2024-02-29
+
+## History of Present Illness (HPI):
+
+81-year-old male presents with progressive dyspnea over the past week. Symptoms started with exertion and have worsened to occur at rest. He denies chest pain, fever, chills, or productive cough. He notes mild bilateral lower extremity edema.
+
+## Past Medical History (PMH):
+
+*   Hypertension
+*   Hyperlipidemia
+*   Osteoarthritis
+*   Former smoker (quit 20 years ago, 20 pack-year history)
+
+## Medications:
+
+*   Lisinopril
+*   Atorvastatin
+*   Acetaminophen PRN
+
+## Allergies:
+
+NKDA
+
+## Social History:
+
+Lives at home with his wife. Independent in ADLs but reports needing assistance with some IADLs. Denies alcohol or illicit drug use.
+
+## Family History:
+
+Father had coronary artery disease. Mother had hypertension.
+
+## Review of Systems (ROS):
+
+*   **Constitutional:** Denies fever, chills, weight loss.
+*   **Cardiovascular:** Denies chest pain, palpitations. Reports lower extremity edema.
+*   **Respiratory:** Reports progressive dyspnea, denies cough, wheezing, or hemoptysis.
+*   **Gastrointestinal:** Denies nausea, vomiting, diarrhea, abdominal pain.
+*   **Genitourinary:** Denies dysuria, frequency, urgency.
+*   **Neurological:** Denies headache, dizziness, weakness, numbness.
+*   **Musculoskeletal:** Denies joint pain other than baseline osteoarthritis.
+*   **Skin:** Denies rash, itching.
+
+## Physical Examination:
+
+*   **General:** Elderly male, appears mildly distressed due to shortness of breath.
+*   **Vitals:** HR 110 bpm, BP 130/80 mmHg, SpO2 90% on room air, Temp 37.0°C.
+*   **HEENT:** Normocephalic, atraumatic. Mucous membranes moist. No JVD noted at rest.
+*   **Cardiovascular:** Regular rate and rhythm, no murmurs, rubs, or gallops auscultated. Peripheral pulses 2+ bilaterally.
+*   **Respiratory:** Lungs clear to auscultation bilaterally, but breath sounds are diminished at the bases. No wheezes or crackles noted. Increased work of breathing with accessory muscle use.
+*   **Abdomen:** Soft, non-tender, non-distended. Bowel sounds present in all four quadrants.
+*   **Extremities:** 2+ pitting edema bilaterally up to the mid-calf.
+*   **Neurological:** Alert and oriented x3. Grossly intact motor and sensory function.
+
+## Investigations:
+
+*   **Chest X-ray:** Shows evidence of a pleural effusion, likely bilateral, more prominent on the right side, causing blunting of the costophrenic angles and obscuring the diaphragm.
+*   **EKG:** Sinus tachycardia.
+*   **Labs:** Pending (CBC, BMP, BNP, Troponin).
+
+## Assessment:
+
+1.  **Acute decompensated heart failure (ADHF)**: Likely etiology for the progressive dyspnea, lower extremity edema, and pleural effusion. The patient's history of hypertension and hyperlipidemia are risk factors. The diminished breath sounds at the bases and radiographic findings of pleural effusion support this diagnosis. Tachycardia and hypoxia are consistent with respiratory compromise secondary to fluid overload.
+
+## Plan:
+
+1.  **Admit to Cardiology service.**
+2.  **Oxygen therapy:** Start supplemental oxygen via nasal cannula to maintain SpO2 > 92%.
+3.  **Diuretics:** Administer IV furosemide (e.g., 40mg) to promote diuresis and reduce fluid overload.
+4.  **Nitroglycerin:** Consider IV nitroglycerin for preload and afterload reduction if blood pressure allows.
+5.  **Monitor:** Closely monitor vital signs, oxygen saturation, respiratory status, and urine output.
+6.  **Labs:** Review pending labs (CBC, BMP, BNP, Troponin) to further evaluate renal function, electrolytes, cardiac biomarkers, and BNP level.
+7.  **Repeat CXR:** Obtain a repeat chest x-ray after diuresis to assess for improvement in pleural effusion and pulmonary congestion.
+8.  **Consult Cardiology:** Obtain cardiology consultation for further management and evaluation for underlying cardiac pathology.
+9.  **Consider:** If patient does not respond to initial therapy, consider non-invasive ventilation (NIV) or intubation if respiratory failure worsens.

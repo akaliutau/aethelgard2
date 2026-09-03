@@ -17,7 +17,7 @@ class HTTPRemoteExecutor:
     endpoint: str
     config: VaultConfig
     pipeline: Pipeline
-    timeout_seconds: float = 600.0
+    timeout_seconds: float = 1800.0
 
     @property
     def fingerprint(self) -> str:
@@ -48,7 +48,10 @@ class HTTPRemoteExecutor:
             headers={'content-type': 'application/zip'},
             timeout=self.timeout_seconds,
         )
-        response.raise_for_status()
+        if response.is_error:
+            raise RuntimeError(
+                f'Remote worker failed ({response.status_code}): {response.text}'
+            )
         decoded = decode_results(response.content)
         by_relpath = {a.relpath.as_posix(): a for artifacts in cases.values() for a in artifacts}
         from dataclasses import replace

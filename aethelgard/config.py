@@ -18,7 +18,7 @@ class ExtractorConfig(BaseModel):
     kind: str = 'qwen'
     model: str = 'Qwen/Qwen3-4B-Instruct-2507'
     device: str = 'cpu'
-    max_new_tokens: int = 1024
+    max_new_tokens: int = 4096
 
 
 class EmbeddingsConfig(BaseModel):
