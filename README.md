@@ -56,8 +56,7 @@ We engineered Aethelgard to act as the decentralized nervous system for clinical
 
 ### 🏗️ Architecture 
 
-The core concept of Smart Folder
-The lowest level and the central idea is the concept of Smart Folder. 
+The core concept of Smart Folder. 
 
 <p align="center">
 <img src="docs/assets/Diagram_2c.png" width="85%" alt="Smart Folder" />
