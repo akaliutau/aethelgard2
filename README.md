@@ -91,7 +91,8 @@ medical documents
 <img src="docs/assets/Diagram_3.png" width="75%" alt="Architecture of Aethelgard" />
 
 <em>Figure 3: System Design of our protocol. Super-link is built on the basis of message queue. 
-  For each component we have a pre-defined interface in our framework</em>
+  For each component we have a pre-defined interface in our framework. The example of network implementation + UI can be found in 
+  the 1st version of Aethelgard: https://github.com/akaliutau/aethelgard</em>
 </p>
 
 ### 🏗️ How It Works (The Pure-Pull Workflow)
@@ -326,7 +327,7 @@ Deployment details:
 
 ---
 
-## 🧰 CLI Handbook
+## 🧰 aethelgard CLI Handbook
 
 ```text
 init      create a Smart Folder
