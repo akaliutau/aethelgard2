@@ -60,7 +60,7 @@ The core concept of Smart Folder
 The lowest level and the central idea is the concept of Smart Folder. 
 
 <p align="center">
-<img src="docs/assets/Diagram_2c.png" width="75%" alt="Smart Folder" />
+<img src="docs/assets/Diagram_2c.png" width="85%" alt="Smart Folder" />
 
 <em>Figure 1: Smart Folder handles the lowest level of processing, and is the closest level to the documents.</em>
 </p>
@@ -80,10 +80,9 @@ medical documents
 
 
 <p align="center">
-<img src="docs/assets/Diagram_3a.png" width="75%" alt="Smart Folder" />
+<img src="docs/assets/Diagram_3a.png" width="80%" alt="Smart Folder" />
 
-<em>Figure 2: We were inspired by object-based of version control like `git`, and implemented something very similar.
-.</em>
+<em>Figure 2: We were inspired by object-based VCS like `git`, and implemented something very similar.</em>
 </p>
 
 
@@ -145,9 +144,9 @@ than unrelated cases.
 
 2. The second question is to validate the reliability and usefulness of search engine with heavy data obfuscation and vector noise.
 
-We created a vault consisting of 31 records and initialize a SmartFloder with all embeddings and pre-processing.
+We created a vault consisting of 31 records and initialized a SmartFolder with all embeddings and pre-processing.
 
-We found the useful operating region: the vector can be heavily perturbed before retrieval ranking collapses. 
+We found that the vector can be heavily perturbed indeed, before retrieval ranking collapses. 
 In the current 31-case PoC, protected queries preserved the clean Top-1 result in 93.8% of queries.
 
 
@@ -211,13 +210,13 @@ Models that need you to manually agree with T&C:
 | google/embeddinggemma-300m | https://huggingface.co/google/embeddinggemma-300m |
 | google/medsiglip-448       | https://huggingface.co/google/medsiglip-448       |
 
-If already deployed remote worker is used, then this does not need a local Hugging Face token.
+If already deployed remote worker is used, no additional settings are needed.
 
 ---
 
 ## 🧪 Run the One-Record Demo
 
-Create a clean copy:
+How to play with local vault:
 
 ```bash
 cd demo
@@ -232,17 +231,19 @@ Expected:
 1 case requires processing
 ```
 
-### Local (can run on any machine, both CPU/GPU, but the latter helps much faster processing)
+### Local run - models will be auto-downloaded and run on local machine (both CPU/GPU, the latter gives 10x advantage)
 
 ```bash
 aethelgard run
 ```
 
-The first run loads Qwen, EmbeddingGemma, and MedSigLIP locally, so that cold run can take time (5-7 min).
-Subsequent runs usually require 1-2 min to finish.
+Nore: the fresh run loads Qwen, EmbeddingGemma, and MedSigLIP locally, so that cold run can take time (5-7 min).
+Subsequent runs usually require 1-2 min to finish. This is applicable for cloud instance as well.
+
 
 ### Remote GPU
 
+For convenience and demonstration, we deployed fully configured instance with connected models to https://aethelgard-vault-worker-ud4oy3q2sq-uc.a.run.app
 ```bash
 export WORKER_URL="https://aethelgard-vault-worker-ud4oy3q2sq-uc.a.run.app"
 aethelgard run --remote "$WORKER_URL"
@@ -302,7 +303,7 @@ Text + image:
 ```bash
 aethelgard search \
   "similar radiographic case" \
-  --image CASE-00002/chest.jpg
+  --image CASE-00008/chest.jpg
 ```
 
 Clean vs protected:
@@ -310,74 +311,14 @@ Clean vs protected:
 ```bash
 aethelgard search \
   "similar radiographic case" \
-  --image CASE-00002/chest.jpg \
+  --image CASE-00008/chest.jpg \
   --compare-protection \
   --seed 42
 ```
 
 Search uses committed vectors; it does **not** rerun Qwen.
 
----
-
-## 🧮 Reproduce the Research Run
-
-Generate the corpus:
-
-```bash
-python utils/prepare_research_dataset.py \
-  dataset/Hospital_A \
-  --images-root dataset/Hospital_A \
-  --force
-```
-
-This creates:
-
-```text
-aethelgard-research/
-├── vaults/mixed/
-└── research/ground_truth.jsonl
-```
-
-Initialize and run:
-
-```bash
-cd aethelgard-research/vaults/mixed
-aethelgard init
-
-python /path/to/aethelgard/utils/run_research.py \
-  --vault . \
-  --remote "$WORKER_URL" \
-  --ground-truth ../../research/ground_truth.jsonl
-```
-
-Notebook-ready outputs:
-
-```text
-.research/latest/
-├── summary.json
-├── cases.csv
-├── search.csv
-├── protection.csv
-└── *.jsonl
-```
-
-See **[docs/RESEARCH.md](docs/RESEARCH.md)** for the results and the notebook audit.
-
----
-
 ## ☁️ Cloud Worker
-
-The worker runs the same semantic pipeline on an L4 GPU while the Smart Folder remains local.
-
-```text
-local case → Cloud Run GPU → derived artifacts → local commit
-```
-
-For the demo:
-
-```bash
-ENV_FILE=.env.cloud scripts/warm_service.sh --keep
-```
 
 Deployment details:
 

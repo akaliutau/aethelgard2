@@ -70,20 +70,6 @@ concurrency  1
 
 Keep request timeouts long enough for model initialization and generation.
 
-## Warm before a demo
-
-```bash
-ENV_FILE=.env.cloud scripts/warm_service.sh --keep
-```
-
-Run one real synthetic case once. A health check does not load the full model stack.
-
-After the demo:
-
-```bash
-ENV_FILE=.env.cloud scripts/warm_service.sh --cool
-```
-
 ## Model cache
 
 The current deployment uses a private GCS model cache so the runtime does not need to download gated models on every cold start.

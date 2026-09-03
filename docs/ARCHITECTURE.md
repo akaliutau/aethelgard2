@@ -92,4 +92,4 @@ Protected search adds perturbation after local query encoding:
 clean vector → Gaussian perturbation → renormalize → protected vector
 ```
 
-This is an empirical protection mechanism, not encryption or formal DP.
+Note: This is an _empirical protection_ mechanism, not encryption or formal DP.
