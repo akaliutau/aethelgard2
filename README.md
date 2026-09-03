@@ -23,7 +23,7 @@ creating a scalable infrastructure for global clinical knowledge exchange
 
 The core idea of Aethelgard is the concept of _Smart Folder_, with allows to turn the directory with collections of medical notes, files, 
 and images into a semantic vault. It detects semantic changes, extracts structured clinical evidence, applies protection policy, creates multimodal
-representations, records provenance, and commits the result as a semantic revision. Ir resembles the git, but focuses on automatically generating 
+representations, records provenance, and commits the result as a semantic revision. It resembles some VCS such as  `git`, but focuses on automatically generating 
 the safe semantic representation of undelaying data, which can be shared with peers.
 
 Each Smart Folder, when coupled with network interface, becomes a node in a distributed network, that allow to share knowledge.
@@ -60,16 +60,14 @@ The core concept of Smart Folder
 The lowest level and the central idea is the concept of Smart Folder. 
 
 <p align="center">
-<img src="docs/assets/Diagram_2.png" width="75%" alt="Smart Folder" />
+<img src="docs/assets/Diagram_2c.png" width="75%" alt="Smart Folder" />
 
-<em>Figure 2: Smart Folder handles the lowest level of processing, and is the closest level to the documents.</em>
+<em>Figure 1: Smart Folder handles the lowest level of processing, and is the closest level to the documents.</em>
 </p>
 
 Smart Folder has a pluggable design. The current stack uses **Qwen3-4B-Instruct-2507** for evidence extraction, 
 **EmbeddingGemma-300m** for clinical text, and **MedSigLIP-448** for medical images. 
 Each component sits behind a replaceable interface. 
-We were inspired by object-based of version control like `git`, and implemented something very similar.
-
 
 ```text
 medical documents
@@ -79,6 +77,15 @@ medical documents
   → reproducible revision
   → local search / protected-query experiments
 ```
+
+
+<p align="center">
+<img src="docs/assets/Diagram_3a.png" width="75%" alt="Smart Folder" />
+
+<em>Figure 2: We were inspired by object-based of version control like `git`, and implemented something very similar.
+.</em>
+</p>
+
 
 
 <p align="center">
@@ -117,7 +124,7 @@ By applying a controlled Gaussian noise ($\sigma=0.2$) directly to the vectors, 
 
 ### 🧮 Research
 
-the goal of the research was to prove our core idea:
+The goal of the research was to prove our core idea:
 
 > Distort the representation, preserve the signal
 
@@ -133,6 +140,7 @@ than unrelated cases.
 </p>
 
 👉 **[Privacy-Utility Trade-off Analysis](docs/LDP_and_Empirical_Noise_Parameter_Selection_Analysis.ipynb)** 
+
 👉 **[Paper Draft](https://github.com/akaliutau/aethelgard2/raw/main/docs/Privacy_Utility_Tradeoff_Analysis.pdf)** 
 
 2. The second question is to validate the reliability and usefulness of search engine with heavy data obfuscation and vector noise.
@@ -190,11 +198,18 @@ aethelgard --help
 ```
 
 For a **local model run**, HuggingFace token must be set. 
-NOTE: this project is using gated models, so you have to accept access to the configured Google checkpoints and set:
+NOTE: this project is using **gated models**, so you have to accept Google's User Agreement on their models card and set:
 
 ```bash
 export HF_TOKEN="hf_..."
 ```
+
+Models that need you to manually agree with T&C:
+
+| model                      | HuggingFace card                                  |
+|----------------------------|---------------------------------------------------|
+| google/embeddinggemma-300m | https://huggingface.co/google/embeddinggemma-300m |
+| google/medsiglip-448       | https://huggingface.co/google/medsiglip-448       |
 
 If already deployed remote worker is used, then this does not need a local Hugging Face token.
 

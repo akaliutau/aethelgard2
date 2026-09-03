@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Any
-import hashlib
+
 from pydantic import BaseModel, Field
 
 from ...auth import hf_token
